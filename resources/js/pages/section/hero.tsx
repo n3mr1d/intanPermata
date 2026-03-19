@@ -29,17 +29,17 @@ interface FloatingCardProps {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const stats: StatItem[] = [
     {
-        value: '2.500+',
+        value: 'xxx',
         label: 'Alumni Ditempatkan',
         icon: <FontAwesomeIcon icon={faUsers} className="text-rose-400" />,
     },
     {
-        value: '98%',
+        value: 'xxx',
         label: 'Tingkat Kelulusan',
         icon: <FontAwesomeIcon icon={faGraduationCap} className="text-rose-400" />,
     },
     {
-        value: '150+',
+        value: 'xxx',
         label: 'Mitra Perusahaan Jepang',
         icon: <FontAwesomeIcon icon={faBuilding} className="text-rose-400" />,
     },
@@ -166,7 +166,7 @@ export default function HeroSection() {
 
                         {/* Description */}
                         <p className="mb-8 max-w-lg text-base leading-relaxed text-neutral-500 lg:text-lg">
-                            LPK Nihon Karya mempersiapkan tenaga kerja Indonesia berkualitas untuk
+                            LPK Puji Intan Shafira mempersiapkan tenaga kerja Indonesia berkualitas untuk
                             bekerja dan berkarir di Jepang melalui program pelatihan bahasa, budaya,
                             dan vokasional bersertifikat.
                         </p>
@@ -222,8 +222,8 @@ export default function HeroSection() {
                             <div className="absolute top-0 left-0 right-0 z-10 h-1 bg-gradient-to-r from-rose-200 via-rose-500 to-rose-200 opacity-80" />
 
                             <img
-                                src="https://placehold.co/600x400"
-                                alt="Siswa LPK Nihon Karya belajar di kelas bergaya Jepang dengan pemandangan Gunung Fuji"
+                                src="/resource/hero.png"
+                                alt="Siswa LPK Puji Intan Shafira belajar di kelas bergaya Jepang dengan pemandangan Gunung Fuji"
                                 className="w-full object-cover"
                             />
 
@@ -236,7 +236,7 @@ export default function HeroSection() {
                             className="-bottom-4 -left-4"
                             icon={<FontAwesomeIcon icon={faAward} className="text-rose-500" />}
                             title="Tersertifikasi"
-                            subtitle="Kemnaker RI 🎌"
+                            subtitle="xxx"
                         />
 
 

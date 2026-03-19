@@ -42,18 +42,16 @@ interface StatBadge {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const missionItems: MissionItem[] = [
-    { text: 'Memberikan pelatihan bahasa Jepang intensif dan bersertifikat resmi' },
-    { text: 'Membentuk karakter kerja sesuai etika dan budaya Jepang' },
-    { text: 'Menyediakan program keterampilan teknis vokasional berkualitas' },
-    { text: 'Membangun jaringan penempatan kerja yang luas dan terpercaya di Jepang' },
-    { text: 'Mendampingi alumni dengan layanan purna penempatan yang berkelanjutan' },
+    { text: 'x1' },
+    { text: 'x2' },
+
 ];
 
 const socialLinks: SocialLink[] = [
     {
         icon: <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />,
         label: 'Instagram',
-        handle: '@lpk.nihonkarya',
+        handle: '@x',
         href: '#',
         colorClass: 'text-pink-600',
         bgClass: 'bg-gradient-to-br from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100',
@@ -62,7 +60,7 @@ const socialLinks: SocialLink[] = [
     {
         icon: <FontAwesomeIcon icon={faFacebook} className="h-5 w-5" />,
         label: 'Facebook',
-        handle: 'LPK Nihon Karya',
+        handle: 'x',
         href: '#',
         colorClass: 'text-blue-600',
         bgClass: 'bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100',
@@ -71,7 +69,7 @@ const socialLinks: SocialLink[] = [
     {
         icon: <FontAwesomeIcon icon={faYoutube} className="h-5 w-5" />,
         label: 'YouTube',
-        handle: 'Nihon Karya Official',
+        handle: 'x',
         href: '#',
         colorClass: 'text-red-600',
         bgClass: 'bg-gradient-to-br from-red-50 to-rose-50 hover:from-red-100 hover:to-rose-100',
@@ -80,7 +78,7 @@ const socialLinks: SocialLink[] = [
     {
         icon: <FontAwesomeIcon icon={faWhatsapp} className="h-5 w-5" />,
         label: 'WhatsApp',
-        handle: '+62 812-3456-7890',
+        handle: 'x',
         href: '#',
         colorClass: 'text-green-600',
         bgClass: 'bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100',
@@ -287,7 +285,7 @@ function HeroAbout() {
                     </span>
                 </h1>
                 <p className="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-500">
-                    LPK Nihon Karya adalah lembaga pelatihan kerja terdepan yang mempersiapkan
+                    LPK Puji Intan Shafira adalah lembaga pelatihan kerja terdepan yang mempersiapkan
                     putra-putri Indonesia untuk berkarir dan meraih masa depan cerah di Jepang.
                 </p>
 
@@ -319,8 +317,8 @@ function AboutSection() {
                         <div className="relative overflow-hidden rounded-3xl border border-rose-100 shadow-2xl shadow-rose-200/30">
 
                             <img
-                                src="https://placehold.co/640x480"
-                                alt="Gedung LPK Nihon Karya - Pusat Pelatihan Kerja Jepang"
+                                src="/resource/gedung.png"
+                                alt="Gedung LPK Puji Intan Shafira - Pusat Pelatihan Kerja Jepang"
                                 className="w-full object-cover"
                             />
 
@@ -336,7 +334,7 @@ function AboutSection() {
                                     />
                                 </div>
                                 <span className="text-xs font-semibold text-neutral-800">
-                                    Gedung LPK Nihon Karya — Berdiri sejak 2015
+                                    Gedung LPK Puji Intan Shafira — Berdiri sejak xxxx
                                 </span>
                             </div>
                         </div>
@@ -354,7 +352,7 @@ function AboutSection() {
                                     Tersertifikasi
                                 </p>
                                 <p className="text-xs font-bold text-neutral-800">
-                                    Kemnaker RI 🎌
+                                    xx
                                 </p>
                             </div>
                         </div>
@@ -377,16 +375,16 @@ function AboutSection() {
                         />
 
                         <p className="mb-5 text-base leading-relaxed text-neutral-500">
-                            LPK Nihon Karya berdiri sejak tahun 2015 dengan misi mempersiapkan
+                            LPK Puji Intan Shafira berdiri sejak tahun xxxx dengan misi mempersiapkan
                             putra-putri Indonesia untuk bekerja dan berkarir di Jepang. Kami
                             menyediakan program pelatihan komprehensif mulai dari bahasa Jepang,
                             etika kerja, hingga keterampilan teknis vokasional.
                         </p>
                         <p className="mb-8 text-base leading-relaxed text-neutral-500">
-                            Dengan pengalaman lebih dari 9 tahun dan jaringan lebih dari{' '}
-                            <strong className="text-rose-500">150 perusahaan mitra</strong> di
+                            Dengan pengalaman lebih dari x tahun dan jaringan lebih dari{' '}
+                            <strong className="text-rose-500">x perusahaan mitra</strong> di
                             Jepang, kami telah berhasil menempatkan lebih dari{' '}
-                            <strong className="text-rose-500">2.500 alumni</strong> di berbagai
+                            <strong className="text-rose-500">x alumni</strong> di berbagai
                             bidang industri.
                         </p>
                         <SocialMediaSection />
@@ -467,13 +465,7 @@ function VisionMissionSection() {
                         </div>
 
                         <p className="text-base leading-relaxed text-neutral-600">
-                            Menjadi Lembaga Pelatihan Kerja{' '}
-                            <strong className="text-rose-600">
-                                terdepan di Indonesia
-                            </strong>{' '}
-                            yang menghasilkan tenaga kerja Indonesia berkualitas, berdaya saing
-                            internasional, dan mampu berkontribusi secara optimal di Jepang dan
-                            dunia.
+                            x
                         </p>
 
                         {/* Corner decoration */}
@@ -554,8 +546,8 @@ function LocationSection() {
                         {/* Top accent */}
                         <div className="absolute left-0 right-0 top-0 z-10 h-1 bg-gradient-to-r from-rose-200 via-rose-500 to-rose-200" />
                         <iframe
-                            title="Lokasi LPK Nihon Karya"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9714706063!2d110.36510231477394!3d-7.801477094379682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f18ea86ca5%3A0xa80a9d8b2ef08555!2sYogyakarta%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+                            title="Lokasi LPK Puji Intan Shafira"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.005569230416!2d112.61693527425162!3d-7.998360592027442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd629aa90b6a001%3A0x6dfe996fb93424e6!2sLPK%20PUJI%20INTAN%20SHAFIRA!5e0!3m2!1sen!2sid!4v1773891352974!5m2!1sen!2sid"
                             width="100%"
                             height="400"
                             style={{ border: 0, display: 'block' }}
@@ -581,11 +573,7 @@ function LocationSection() {
                                     Alamat
                                 </p>
                                 <p className="text-sm font-medium leading-relaxed text-neutral-700">
-                                    Jl. Mawar Indah No. 45, Komplek LPK Nihon Karya
-                                    <br />
-                                    Yogyakarta, DIY 55123
-                                    <br />
-                                    Indonesia
+                                    Jl. S. Supriadi No.23 B9, RT.06/RW.04, Sukun, Kec. Sukun, Kota Malang, Jawa Timur 65148
                                 </p>
                             </div>
                         </div>
@@ -609,14 +597,14 @@ function LocationSection() {
                                     +62 812-3456-7890
                                 </p>
                                 <p className="text-xs text-neutral-400">
-                                    Senin – Sabtu, 08.00 – 17.00 WIB
+                                    Senin – Jumat: 08.00 – 17.00, Sabtu: 09.00 – 16.00
                                 </p>
                             </div>
                         </a>
 
                         {/* Email */}
                         <a
-                            href="mailto:info@nihonkarya.id"
+                            href="mailto:info@pujiintanshafira.id"
                             className="group flex gap-4 rounded-2xl border border-rose-50 bg-rose-50/60 p-5 transition-all duration-300 hover:border-rose-200 hover:bg-rose-50 hover:shadow-sm"
                         >
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-sm shadow-rose-100/60 ring-1 ring-rose-100 transition-transform duration-300 group-hover:scale-110">
@@ -630,7 +618,7 @@ function LocationSection() {
                                     Email
                                 </p>
                                 <p className="text-sm font-semibold text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
-                                    info@nihonkarya.id
+                                    info@pujiintanshafira.id
                                 </p>
                                 <p className="text-xs text-neutral-400">Respon dalam 1×24 jam</p>
                             </div>

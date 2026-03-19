@@ -28,7 +28,7 @@ function NavLogo() {
         <a
             href="#hero"
             className="group flex items-center gap-3"
-            aria-label="LPK Nihon Karya Beranda"
+            aria-label="LPK Puji Intan Shafira Beranda"
         >
             {/* Japanese kanji badge */}
             <div className="relative flex h-10 w-10 items-center justify-center">
@@ -48,7 +48,7 @@ function NavLogo() {
                 <JapanLine className="pointer-events-none absolute -bottom-1 -right-2 h-10 w-auto opacity-20 transition-opacity duration-300 group-hover:opacity-40" />
 
                 <span className="relative text-[15px] font-bold leading-tight tracking-tight text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
-                    LPK Nihon Karya
+                    LPK Puji Intan Shafira
                 </span>
                 <span className="relative text-[10px] font-light tracking-widest text-rose-400">
                     日本・キャリア研修
@@ -289,7 +289,7 @@ export default function NavbarHome() {
                             <span className="font-serif text-xs font-bold text-white">日</span>
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-neutral-800">LPK Nihon Karya</p>
+                            <p className="text-sm font-bold text-neutral-800">LPK Puji Intan Shafira</p>
                             <p className="text-[9px] tracking-widest text-rose-400">日本・キャリア研修</p>
                         </div>
                     </div>

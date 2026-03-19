@@ -11,6 +11,7 @@ import FasilitasSection from './section/fasilitas';
 import { cn } from '@/lib/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import Certificate from './section/certificate';
 
 // ─── Floating Scroll-to-Top Button ────────────────────────────────────────────
 
@@ -83,6 +84,7 @@ export default function Welcome() {
                 <ProgramSection />
                 <GallerySection />
                 <FasilitasSection />
+                <Certificate />
                 <TestimonialSection />
                 <FooterHome />
             </div>

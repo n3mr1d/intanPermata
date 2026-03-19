@@ -172,7 +172,7 @@ function FooterLogo() {
             {/* Brand text */}
             <div>
                 <p className="text-base font-bold leading-tight text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
-                    LPK Nihon Karya
+                    LPK Puji Intan Shafira
                 </p>
                 <p className="text-[10px] font-light tracking-[0.25em] text-rose-400/80">
                     日本・キャリア研修
@@ -390,24 +390,24 @@ export default function FooterHome() {
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faMapMarkerAlt} />}
                                 label="Alamat"
-                                value="Jl. Contoh No. 123, Kota, Jawa Tengah, Indonesia"
+                                value="Jl. S. Supriadi No.23 B9, RT.06/RW.04, Sukun, Kec. Sukun, Kota Malang, Jawa Timur 65148"
                             />
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faPhone} />}
                                 label="Telepon"
-                                value="+62 812-3456-7890"
+                                value="x"
                                 href="tel:+6281234567890"
                             />
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faEnvelope} />}
                                 label="Email"
-                                value="info@nihonkarya.com"
-                                href="mailto:info@nihonkarya.com"
+                                value="x"
+                                href="mailto:info@pujiintanshafira.com"
                             />
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faClock} />}
                                 label="Jam Operasional"
-                                value="Senin – Sabtu, 08:00 – 17:00 WIB"
+                                value="Senin – Jumat: 08.00 – 17.00, Sabtu: 09.00 – 16.00"
                             />
                         </div>
                     </div>
@@ -421,7 +421,7 @@ export default function FooterHome() {
                     <div className="flex items-center gap-3 text-center sm:text-left">
                         <SakuraPetal className="hidden h-4 w-4 text-rose-500/30 sm:block" />
                         <p className="text-xs text-neutral-400">
-                            © {currentYear} LPK Nihon Karya. All rights reserved.
+                            © {currentYear} LPK Puji Intan Shafira. All rights reserved.
                         </p>
                     </div>
 

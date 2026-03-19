@@ -42,36 +42,7 @@ const facilities: Facility[] = [
         image: 'https://placehold.co/800x500/FFF1F2/BE123C?text=Ruang+Kelas+Modern',
         tags: ['AC', 'Proyektor', 'Digital'],
     },
-    {
-        id: 'asrama',
-        icon: <FontAwesomeIcon icon={faBed} />,
-        titleJp: '寮',
-        title: 'Asrama Nyaman',
-        description:
-            'Asrama bersih dan teratur dengan fasilitas lengkap. Melatih kedisiplinan & kemandirian siswa sesuai budaya kehidupan di Jepang.',
-        image: 'https://placehold.co/800x500/FFF1F2/E11D48?text=Asrama+Nyaman',
-        tags: ['Bersih', 'Teratur', 'Lengkap'],
-    },
-    {
-        id: 'lapangan',
-        icon: <FontAwesomeIcon icon={faRunning} />,
-        titleJp: '運動場',
-        title: 'Lapangan Latihan',
-        description:
-            'Area outdoor untuk latihan fisik, senam pagi (taiso), dan kegiatan olahraga. Membentuk stamina dan kedisiplinan ala Jepang.',
-        image: 'https://placehold.co/800x500/FFF1F2/9F1239?text=Lapangan+Latihan',
-        tags: ['Outdoor', 'Taiso', 'Olahraga'],
-    },
-    {
-        id: 'lab-bahasa',
-        icon: <FontAwesomeIcon icon={faHeadphones} />,
-        titleJp: '語学ラボ',
-        title: 'Lab Bahasa Jepang',
-        description:
-            'Laboratorium bahasa dengan headset individu dan software pembelajaran interaktif. Mendukung latihan listening & speaking JLPT secara intensif.',
-        image: 'https://placehold.co/800x500/FFF1F2/BE123C?text=Lab+Bahasa+Jepang',
-        tags: ['JLPT', 'Interaktif', 'Listening'],
-    },
+
     {
         id: 'simulasi',
         icon: <FontAwesomeIcon icon={faCogs} />,
@@ -82,36 +53,7 @@ const facilities: Facility[] = [
         image: 'https://placehold.co/800x500/FFF1F2/E11D48?text=Simulasi+Kerja',
         tags: ['Vokasional', 'Etika', 'Praktik'],
     },
-    {
-        id: 'mushola',
-        icon: <FontAwesomeIcon icon={faMosque} />,
-        titleJp: '祈祷室',
-        title: 'Mushola',
-        description:
-            'Tempat ibadah yang bersih dan tenang untuk mendukung keseimbangan spiritual siswa selama menjalani masa pelatihan.',
-        image: 'https://placehold.co/800x500/FFF1F2/9F1239?text=Mushola',
-        tags: ['Ibadah', 'Tenang', 'Bersih'],
-    },
-    {
-        id: 'perpustakaan',
-        icon: <FontAwesomeIcon icon={faBookOpen} />,
-        titleJp: '図書館',
-        title: 'Perpustakaan',
-        description:
-            'Koleksi buku bahasa Jepang, manga edukatif, dan materi JLPT. Ruang baca nyaman untuk belajar mandiri.',
-        image: 'https://placehold.co/800x500/FFF1F2/BE123C?text=Perpustakaan',
-        tags: ['Buku', 'Manga', 'JLPT'],
-    },
-    {
-        id: 'kantin',
-        icon: <FontAwesomeIcon icon={faUtensils} />,
-        titleJp: '食堂',
-        title: 'Kantin & Dapur Bersama',
-        description:
-            'Area makan bersama dan dapur praktik untuk mengenal masakan Jepang. Mendukung pelatihan di bidang kuliner.',
-        image: 'https://placehold.co/800x500/FFF1F2/E11D48?text=Kantin+%26+Dapur',
-        tags: ['Kuliner', 'Praktik', 'Bersama'],
-    },
+
 ];
 
 
@@ -189,72 +131,8 @@ function SeigaihaPattern({ className }: { className?: string }) {
     );
 }
 
-// ─── Lightbox ─────────────────────────────────────────────────────────────────
 
-interface LightboxProps {
-    facility: Facility;
-    onClose: () => void;
-}
 
-function FacilityLightbox({ facility, onClose }: LightboxProps) {
-    return (
-        <div
-            role="dialog"
-            aria-modal="true"
-            aria-label={`Fasilitas: ${facility.title}`}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md"
-            style={{ animation: 'fadeInFasilitas 0.25s ease' }}
-            onClick={(e) => e.target === e.currentTarget && onClose()}
-        >
-            <div
-                className="relative mx-4 flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl shadow-black/40"
-                style={{ animation: 'scaleInFasilitas 0.25s ease' }}
-            >
-                {/* Accent bar */}
-                <div className="absolute left-0 right-0 top-0 z-10 h-1 bg-gradient-to-r from-rose-200 via-rose-500 to-rose-200" />
-
-                {/* Image */}
-                <div className="relative min-h-0 flex-1 overflow-hidden bg-neutral-50">
-                    <img
-                        src={facility.image}
-                        alt={facility.title}
-                        className="h-full max-h-[50vh] w-full object-cover"
-                        loading="lazy"
-                    />
-                </div>
-
-                {/* Info */}
-                <div className="flex items-start justify-between gap-4 border-t border-neutral-100 bg-white px-6 py-5">
-                    <div className="min-w-0">
-                        <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-rose-400">
-                            {facility.titleJp}
-                        </p>
-                        <p className="text-lg font-bold text-neutral-900">{facility.title}</p>
-                        <p className="mt-1 text-sm leading-relaxed text-neutral-500">{facility.description}</p>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                            {facility.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="rounded-full border border-rose-100 bg-rose-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-rose-500"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                    <button
-                        id="fasilitas-lightbox-close"
-                        onClick={onClose}
-                        aria-label="Tutup"
-                        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-rose-100 bg-rose-50 text-rose-500 transition-all duration-200 hover:scale-110 hover:bg-rose-500 hover:text-white"
-                    >
-                        <FontAwesomeIcon icon={faTimes} className="h-4 w-4" />
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
-}
 
 // ─── Facility Card ────────────────────────────────────────────────────────────
 
@@ -268,7 +146,6 @@ function FacilityCard({ facility, onOpen }: FacilityCardProps) {
         <article
             className="group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-neutral-100 bg-white shadow-sm transition-all duration-500 hover:border-rose-200 hover:shadow-xl hover:shadow-rose-100/50"
             style={{ animation: 'fadeInCard 0.45s ease both' }}
-            onClick={onOpen}
             tabIndex={0}
             role="button"
             aria-label={`Lihat detail: ${facility.title}`}
@@ -289,15 +166,6 @@ function FacilityCard({ facility, onOpen }: FacilityCardProps) {
                     loading="lazy"
                 />
 
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
-
-                {/* Zoom icon on hover */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-400 group-hover:opacity-100">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/70 bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                        <FontAwesomeIcon icon={faExpand} className="h-4 w-4 text-white" />
-                    </div>
-                </div>
 
                 {/* JP badge */}
                 <div className="absolute left-3 top-3 z-10 rounded-full border border-white/30 bg-white/85 px-2.5 py-1 text-[9px] font-bold tracking-[0.2em] text-rose-600 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:border-rose-200 group-hover:bg-white">
@@ -432,10 +300,7 @@ export default function FasilitasSection() {
                             kedisiplinan, dan kesiapan peserta sebelum berangkat ke Jepang.
                         </p>
 
-                        {/* JP subtitle */}
-                        <p className="mt-2 text-[10px] font-light tracking-[0.35em] text-rose-400">
-                            日本語研修センター · LPK Nihon Karya の施設
-                        </p>
+
                     </div>
 
                     {/* ── Facility Grid ── */}
@@ -469,13 +334,7 @@ export default function FasilitasSection() {
                 `}</style>
             </section>
 
-            {/* ── Lightbox ── */}
-            {lightboxFacility && (
-                <FacilityLightbox
-                    facility={lightboxFacility}
-                    onClose={() => setLightboxFacility(null)}
-                />
-            )}
+
         </>
     );
 }

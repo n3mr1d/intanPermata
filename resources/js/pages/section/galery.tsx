@@ -63,69 +63,7 @@ const galleryItems: GalleryItem[] = [
         category: 'budaya',
         aspect: 'portrait',
     },
-    {
-        id: 'g6',
-        src: 'https://placehold.co/900x900/FFF1F2/9F1239?text=Presentasi+Siswa',
-        thumb: 'https://placehold.co/450x450/FFF1F2/9F1239?text=Presentasi+Siswa',
-        title: 'Presentasi Siswa Unggulan',
-        captionJp: '生徒発表',
-        category: 'kelas',
-        aspect: 'square',
-    },
-    {
-        id: 'g7',
-        src: 'https://placehold.co/1200x800/FFF1F2/BE123C?text=Praktik+Vokasional',
-        thumb: 'https://placehold.co/600x400/FFF1F2/BE123C?text=Vokasional',
-        title: 'Praktik Keterampilan Vokasional',
-        captionJp: '職業訓練実習',
-        category: 'pelatihan',
-        aspect: 'landscape',
-    },
-    {
-        id: 'g8',
-        src: 'https://placehold.co/900x900/FFF1F2/9F1239?text=Festival+Tanabata',
-        thumb: 'https://placehold.co/450x450/FFF1F2/9F1239?text=Tanabata',
-        title: 'Festival Tanabata',
-        captionJp: '七夕祭り',
-        category: 'budaya',
-        aspect: 'square',
-    },
-    {
-        id: 'g9',
-        src: 'https://placehold.co/1200x750/FFF1F2/BE123C?text=Studi+Lapangan',
-        thumb: 'https://placehold.co/600x375/FFF1F2/BE123C?text=Studi+Lapangan',
-        title: 'Studi Lapangan & Kunjungan Industri',
-        captionJp: 'フィールドスタディ',
-        category: 'kegiatan',
-        aspect: 'landscape',
-    },
-    {
-        id: 'g10',
-        src: 'https://placehold.co/800x1050/FFF1F2/E11D48?text=Belajar+Kanji',
-        thumb: 'https://placehold.co/400x525/FFF1F2/E11D48?text=Belajar+Kanji',
-        title: 'Kelas Kanji Lanjutan',
-        captionJp: '漢字上級クラス',
-        category: 'kelas',
-        aspect: 'portrait',
-    },
-    {
-        id: 'g11',
-        src: 'https://placehold.co/1200x800/FFF1F2/BE123C?text=Olahraga+Bersama',
-        thumb: 'https://placehold.co/600x400/FFF1F2/BE123C?text=Olahraga',
-        title: 'Kegiatan Olahraga Bersama',
-        captionJp: 'スポーツ活動',
-        category: 'kegiatan',
-        aspect: 'landscape',
-    },
-    {
-        id: 'g12',
-        src: 'https://placehold.co/900x900/FFF1F2/9F1239?text=Sertifikasi+JLPT',
-        thumb: 'https://placehold.co/450x450/FFF1F2/9F1239?text=JLPT',
-        title: 'Ujian Sertifikasi JLPT',
-        captionJp: 'JLPT試験',
-        category: 'pelatihan',
-        aspect: 'square',
-    },
+
 ];
 
 // ─── Category filter config ───────────────────────────────────────────────────
@@ -232,114 +170,6 @@ function IconChevronRight({ className }: { className?: string }) {
     );
 }
 
-// ─── Lightbox Modal ───────────────────────────────────────────────────────────
-
-interface LightboxProps {
-    items: GalleryItem[];
-    activeIndex: number;
-    onClose: () => void;
-    onPrev: () => void;
-    onNext: () => void;
-}
-
-function Lightbox({ items, activeIndex, onClose, onPrev, onNext }: LightboxProps) {
-    const item = items[activeIndex];
-
-    // Close on backdrop click
-    const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (e.target === e.currentTarget) onClose();
-    };
-
-    return (
-        <div
-            role="dialog"
-            aria-modal="true"
-            aria-label={`Foto: ${item.title}`}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md"
-            style={{ animation: 'fadeInLightbox 0.25s ease' }}
-            onClick={handleBackdropClick}
-        >
-            {/* Card */}
-            <div className="relative mx-4 flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl shadow-black/40"
-                style={{ animation: 'scaleInLightbox 0.25s ease' }}>
-
-                {/* Top accent bar */}
-                <div className="absolute left-0 right-0 top-0 z-10 h-1 bg-gradient-to-r from-rose-200 via-rose-500 to-rose-200" />
-
-                {/* Image area */}
-                <div className="relative min-h-0 flex-1 overflow-hidden bg-neutral-50">
-                    <img
-                        src={item.src}
-                        alt={item.title}
-                        className="h-full max-h-[70vh] w-full object-contain"
-                        loading="lazy"
-                    />
-
-                    {/* Prev / Next nav */}
-                    {items.length > 1 && (
-                        <>
-                            <button
-                                id="lightbox-prev"
-                                onClick={(e) => { e.stopPropagation(); onPrev(); }}
-                                aria-label="Foto sebelumnya"
-                                className="absolute left-3 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 shadow-md shadow-black/20 backdrop-blur-sm transition-all duration-200 hover:scale-110 hover:bg-white hover:shadow-lg hover:shadow-rose-200/40"
-                            >
-                                <IconChevronLeft className="h-5 w-5 text-neutral-700" />
-                            </button>
-                            <button
-                                id="lightbox-next"
-                                onClick={(e) => { e.stopPropagation(); onNext(); }}
-                                aria-label="Foto berikutnya"
-                                className="absolute right-3 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 shadow-md shadow-black/20 backdrop-blur-sm transition-all duration-200 hover:scale-110 hover:bg-white hover:shadow-lg hover:shadow-rose-200/40"
-                            >
-                                <IconChevronRight className="h-5 w-5 text-neutral-700" />
-                            </button>
-                        </>
-                    )}
-
-                    {/* Counter badge */}
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full border border-white/30 bg-black/50 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                        {activeIndex + 1} / {items.length}
-                    </div>
-                </div>
-
-                {/* Footer info */}
-                <div className="flex items-center justify-between gap-4 border-t border-neutral-100 bg-white px-6 py-4">
-                    <div className="min-w-0">
-                        <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-rose-400">
-                            {item.captionJp}
-                        </p>
-                        <p className="truncate text-base font-bold text-neutral-900">{item.title}</p>
-                        <span className="mt-1 inline-block rounded-full border border-rose-100 bg-rose-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-rose-500">
-                            {item.category}
-                        </span>
-                    </div>
-
-                    {/* Close button */}
-                    <button
-                        id="lightbox-close"
-                        onClick={onClose}
-                        aria-label="Tutup galeri"
-                        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-rose-100 bg-rose-50 text-rose-500 transition-all duration-200 hover:scale-110 hover:bg-rose-500 hover:text-white"
-                    >
-                        <IconClose className="h-4 w-4" />
-                    </button>
-                </div>
-            </div>
-
-            <style>{`
-                @keyframes fadeInLightbox {
-                    from { opacity: 0; }
-                    to   { opacity: 1; }
-                }
-                @keyframes scaleInLightbox {
-                    from { opacity: 0; transform: scale(0.94) translateY(12px); }
-                    to   { opacity: 1; transform: scale(1)    translateY(0px);  }
-                }
-            `}</style>
-        </div>
-    );
-}
 
 // ─── Gallery Card ─────────────────────────────────────────────────────────────
 
@@ -361,40 +191,26 @@ function GalleryCard({ item, onOpen }: GalleryCardProps) {
         <div
             className="group relative cursor-pointer overflow-hidden rounded-2xl bg-neutral-100 shadow-sm ring-1 ring-rose-100 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-200/40 hover:ring-rose-300"
             style={{ animation: 'fadeInCard 0.4s ease both' }}
-            onClick={onOpen}
+
             tabIndex={0}
             role="button"
             aria-label={`Buka foto: ${item.title}`}
             onKeyDown={(e) => e.key === 'Enter' && onOpen()}
         >
-            {/* Top accent line (visible on hover) */}
-            <div className="absolute left-0 right-0 top-0 z-10 h-[3px] bg-gradient-to-r from-transparent via-rose-400 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             {/* Image */}
             <div className={cn('relative w-full overflow-hidden', aspectClass)}>
                 <img
                     src={item.thumb}
                     alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 "
                     loading="lazy"
                 />
 
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
 
-                {/* Hover overlay content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-400 group-hover:opacity-100">
-                    {/* Zoom icon */}
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/70 bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="h-5 w-5">
-                            <circle cx="11" cy="11" r="8" />
-                            <path d="m21 21-4.35-4.35" strokeLinecap="round" />
-                            <line x1="11" y1="8" x2="11" y2="14" strokeLinecap="round" />
-                            <line x1="8" y1="11" x2="14" y2="11" strokeLinecap="round" />
-                        </svg>
-                    </div>
-                    <p className="text-xs font-semibold tracking-widest text-white/90">{item.captionJp}</p>
-                </div>
+
 
                 {/* Category badge */}
                 <div className="absolute left-3 top-3 z-10 rounded-full border border-white/30 bg-white/85 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-rose-600 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:border-rose-200 group-hover:bg-white">
@@ -532,13 +348,13 @@ export default function GallerySection() {
                         </div>
 
                         <p className="mx-auto max-w-2xl text-base leading-relaxed text-neutral-500">
-                            Dokumentasi perjalanan dan kegiatan siswa LPK Nihon Karya — dari ruang kelas
+                            Dokumentasi perjalanan dan kegiatan siswa LPK Puji Intan Shafira — dari ruang kelas
                             hingga kebudayaan Jepang yang autentik.
                         </p>
 
                         {/* Japanese subtitle */}
                         <p className="mt-2 text-[10px] font-light tracking-[0.35em] text-rose-400">
-                            日本語研修センター · LPK Nihon Karya の活動記録
+                            日本語研修センター · LPK Puji Intan Shafira の活動記録
                         </p>
                     </div>
 
@@ -596,16 +412,7 @@ export default function GallerySection() {
                 `}</style>
             </section>
 
-            {/* ── Lightbox (portal-like, rendered outside section) ── */}
-            {lightboxIndex !== null && (
-                <Lightbox
-                    items={visibleItems}
-                    activeIndex={lightboxIndex}
-                    onClose={closeLightbox}
-                    onPrev={goPrev}
-                    onNext={goNext}
-                />
-            )}
+
         </>
     );
 }

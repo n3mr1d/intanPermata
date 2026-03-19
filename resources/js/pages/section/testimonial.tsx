@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
         location: 'Nagoya, Jepang 🇯🇵',
         year: '2023',
         rating: 5,
-        text: 'Berkat LPK Nihon Karya, saya sekarang bekerja di pabrik otomotif ternama di Nagoya. Pelatihannya sangat intensif dan pembimbing selalu siap membantu kapan saja. Mimpi saya bekerja di Jepang akhirnya terwujud!',
+        text: 'Berkat LPK Puji Intan Shafira, saya sekarang bekerja di pabrik otomotif ternama di Nagoya. Pelatihannya sangat intensif dan pembimbing selalu siap membantu kapan saja. Mimpi saya bekerja di Jepang akhirnya terwujud!',
         initials: 'AR',
         avatarBg: 'from-rose-400 to-rose-600',
         avatarText: 'text-white',
@@ -92,7 +92,7 @@ const testimonials: Testimonial[] = [
         location: 'Yokohama, Jepang 🇯🇵',
         year: '2022',
         rating: 5,
-        text: 'Proses keberangkatan sangat terorganisir, dari pengurusan visa hingga orientasi budaya. Tim LPK Nihon Karya benar-benar mendampingi sampai saya tiba dan menyesuaikan diri di Jepang.',
+        text: 'Proses keberangkatan sangat terorganisir, dari pengurusan visa hingga orientasi budaya. Tim LPK Puji Intan Shafira benar-benar mendampingi sampai saya tiba dan menyesuaikan diri di Jepang.',
         initials: 'FN',
         avatarBg: 'from-violet-400 to-violet-600',
         avatarText: 'text-white',
@@ -105,7 +105,7 @@ const testimonials: Testimonial[] = [
         location: 'Kyoto, Jepang 🇯🇵',
         year: '2023',
         rating: 5,
-        text: 'Saya bersyukur memilih LPK Nihon Karya. Pelatihan keperawatan lansia sangat komprehensif dan sesuai standar Jepang. Kini saya bekerja di fasilitas perawatan bergengsi di Kyoto dengan penghasilan yang sangat baik.',
+        text: 'Saya bersyukur memilih LPK Puji Intan Shafira. Pelatihan keperawatan lansia sangat komprehensif dan sesuai standar Jepang. Kini saya bekerja di fasilitas perawatan bergengsi di Kyoto dengan penghasilan yang sangat baik.',
         initials: 'RH',
         avatarBg: 'from-pink-400 to-pink-600',
         avatarText: 'text-white',
@@ -658,7 +658,7 @@ export default function TestimonialSection() {
 
                         {/* JP subtitle */}
                         <p className="mt-2 text-[10px] font-light tracking-[0.35em] text-rose-400">
-                            日本語研修センター · 卒業生の声 · LPK Nihon Karya
+                            日本語研修センター · 卒業生の声 · LPK Puji Intan Shafira
                         </p>
                     </div>
 
@@ -697,7 +697,7 @@ export default function TestimonialSection() {
 
                         <p className="max-w-md text-center text-sm leading-relaxed text-neutral-500">
                             Bergabunglah bersama 2.500+ alumni yang telah sukses berkarir di Jepang.
-                            Jadilah bagian dari keluarga besar LPK Nihon Karya.
+                            Jadilah bagian dari keluarga besar LPK Puji Intan Shafira.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-3">
