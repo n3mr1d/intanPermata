@@ -30,6 +30,11 @@
     },
     "dependencies": {
         "@fontsource-variable/geist": "^5.2.8",
+        "@fortawesome/fontawesome-svg-core": "^7.2.0",
+        "@fortawesome/free-brands-svg-icons": "^7.2.0",
+        "@fortawesome/free-regular-svg-icons": "^7.2.0",
+        "@fortawesome/free-solid-svg-icons": "^7.2.0",
+        "@fortawesome/react-fontawesome": "^3.2.0",
         "@inertiajs/react": "^2.3.7",
         "@tailwindcss/vite": "^4.1.11",
         "@types/react": "^19.2.0",
