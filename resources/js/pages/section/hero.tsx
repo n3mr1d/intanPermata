@@ -29,19 +29,16 @@ interface FloatingCardProps {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const stats: StatItem[] = [
     {
-        value: 'xxx',
+        value: '19',
         label: 'Alumni Ditempatkan',
         icon: <FontAwesomeIcon icon={faUsers} className="text-rose-400" />,
     },
     {
-        value: 'xxx',
+        value: '80',
         label: 'Tingkat Kelulusan',
-        icon: <FontAwesomeIcon icon={faGraduationCap} className="text-rose-400" />,
-    },
-    {
-        value: 'xxx',
-        label: 'Mitra Perusahaan Jepang',
-        icon: <FontAwesomeIcon icon={faBuilding} className="text-rose-400" />,
+        icon: (
+            <FontAwesomeIcon icon={faGraduationCap} className="text-rose-400" />
+        ),
     },
 ];
 
@@ -60,7 +57,9 @@ function FloatingCard({ className, icon, title, subtitle }: FloatingCardProps) {
                 {icon}
             </div>
             <div>
-                <p className="text-[10px] font-medium uppercase tracking-widest text-rose-400">{title}</p>
+                <p className="text-[10px] font-medium tracking-widest text-rose-400 uppercase">
+                    {title}
+                </p>
                 <p className="text-sm font-bold text-neutral-800">{subtitle}</p>
             </div>
         </div>
@@ -75,26 +74,24 @@ function StatCard({ value, label, icon }: StatItem) {
                 {icon}
             </div>
             <div>
-                <div className="text-xl font-extrabold leading-none text-neutral-900">{value}</div>
-                <div className="mt-0.5 text-[10px] font-medium text-neutral-500">{label}</div>
+                <div className="text-xl leading-none font-extrabold text-neutral-900">
+                    {value}
+                </div>
+                <div className="mt-0.5 text-[10px] font-medium text-neutral-500">
+                    {label}
+                </div>
             </div>
         </div>
     );
 }
 
 /** Decorative background kanji character */
-function KanjiDecor({
-    char,
-    className,
-}: {
-    char: string;
-    className?: string;
-}) {
+function KanjiDecor({ char, className }: { char: string; className?: string }) {
     return (
         <div
             aria-hidden="true"
             className={cn(
-                'pointer-events-none absolute select-none font-serif font-bold ',
+                'pointer-events-none absolute font-serif font-bold select-none',
                 className,
             )}
         >
@@ -103,15 +100,12 @@ function KanjiDecor({
     );
 }
 
-
-
-
 // ─── Main Hero Section ────────────────────────────────────────────────────────
 export default function HeroSection() {
     return (
         <section
             id="hero"
-            className="relative flex min-h-screen items-center overflow-hidden bg-white/50  pt-[65px]"
+            className="relative flex min-h-screen items-center overflow-hidden bg-white/50 pt-[65px]"
         >
             {/* ── Decorative background blobs ── */}
             <div
@@ -125,33 +119,40 @@ export default function HeroSection() {
             {/* Subtle grid overlay */}
             <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[linear-gradient(rgba(255,228,230,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(255,228,230,0.3)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)]"
+                className="absolute inset-0 bg-[linear-gradient(rgba(255,228,230,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(255,228,230,0.3)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)] bg-[size:48px_48px]"
             />
 
             {/* ── Decorative Kanji ── */}
-            <KanjiDecor char="夢" className="top-24 right-12 animate-pulse text-[10rem] text-rose-400/40" />
-            <KanjiDecor char="道" className="bottom-16 left-8 animate-pulse text-[8rem] " />
-            <KanjiDecor char="力" className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22rem] text-neutral-900/10" />
+            <KanjiDecor
+                char="夢"
+                className="top-24 right-12 animate-pulse text-[10rem] text-rose-400/40"
+            />
+            <KanjiDecor
+                char="道"
+                className="bottom-16 left-8 animate-pulse text-[8rem]"
+            />
+            <KanjiDecor
+                char="力"
+                className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22rem] text-neutral-900/10"
+            />
 
             {/* ── Main Content Grid ── */}
             <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
-
                     {/* ── LEFT: Text Content ── */}
                     <div className="flex flex-col">
-
-
-
                         {/* Furigana / Japanese subtitle */}
                         <p className="mb-2 text-[11px] font-light tracking-[0.3em] text-rose-400">
                             日本でのキャリアを実現しよう
                         </p>
 
                         {/* Headline */}
-                        <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+                        <h1 className="mb-6 text-4xl leading-tight font-extrabold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
                             Wujudkan{' '}
                             <span className="relative inline-block">
-                                <span className="relative z-10 text-rose-500">Karir Impian</span>
+                                <span className="relative z-10 text-rose-500">
+                                    Karir Impian
+                                </span>
                                 {/* Underline accent */}
                                 <span
                                     aria-hidden="true"
@@ -166,9 +167,10 @@ export default function HeroSection() {
 
                         {/* Description */}
                         <p className="mb-8 max-w-lg text-base leading-relaxed text-neutral-500 lg:text-lg">
-                            LPK Puji Intan Shafira mempersiapkan tenaga kerja Indonesia berkualitas untuk
-                            bekerja dan berkarir di Jepang melalui program pelatihan bahasa, budaya,
-                            dan vokasional bersertifikat.
+                            LPK Puji Intan Shafira mempersiapkan tenaga kerja
+                            Indonesia berkualitas untuk bekerja dan berkarir di
+                            Jepang melalui program pelatihan bahasa, budaya, dan
+                            vokasional bersertifikat.
                         </p>
 
                         {/* CTA Buttons */}
@@ -179,10 +181,16 @@ export default function HeroSection() {
                                 id="cta-hero-primary"
                                 className="group h-auto gap-2.5 rounded-full bg-rose-500 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-rose-300/40 transition-all duration-300 hover:scale-[1.03] hover:bg-rose-600 hover:shadow-rose-400/50"
                             >
-                                <a href="#daftar">
-                                    <FontAwesomeIcon icon={faUserPlus} className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                                <a href="https://wa.me/6289506399600?text=Halo%20Admin%20LPK%20Puji%20Intan%20Shafira%2C%20saya%20tertarik%20dan%20ingin%20mendaftar%20program%20pelatihan.%20Boleh%20minta%20informasi%20lebih%20lanjut%20mengenai%20persyaratan%20dan%20tata%20cara%20pendaftarannya%3F%20Terima%20kasih." target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon
+                                        icon={faUserPlus}
+                                        className="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+                                    />
                                     Daftar Sekarang
-                                    <FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                                    <FontAwesomeIcon
+                                        icon={faArrowRight}
+                                        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
+                                    />
                                 </a>
                             </Button>
 
@@ -195,7 +203,10 @@ export default function HeroSection() {
                             >
                                 <a href="#program">
                                     Lihat Program
-                                    <FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5 rotate-45" />
+                                    <FontAwesomeIcon
+                                        icon={faArrowRight}
+                                        className="h-3.5 w-3.5 rotate-45"
+                                    />
                                 </a>
                             </Button>
                         </div>
@@ -219,7 +230,7 @@ export default function HeroSection() {
                         {/* Image frame */}
                         <div className="relative w-full overflow-hidden rounded-3xl border border-rose-100 shadow-2xl shadow-rose-200/40">
                             {/* Top accent bar */}
-                            <div className="absolute top-0 left-0 right-0 z-10 h-1 bg-gradient-to-r from-rose-200 via-rose-500 to-rose-200 opacity-80" />
+                            <div className="absolute top-0 right-0 left-0 z-10 h-1 bg-gradient-to-r from-rose-200 via-rose-500 to-rose-200 opacity-80" />
 
                             <img
                                 src="/resource/hero.png"
@@ -232,19 +243,11 @@ export default function HeroSection() {
                         </div>
 
                         {/* ── Floating Badge: Tersertifikasi ── */}
-                        <FloatingCard
-                            className="-bottom-4 -left-4"
-                            icon={<FontAwesomeIcon icon={faAward} className="text-rose-500" />}
-                            title="Tersertifikasi"
-                            subtitle="xxx"
-                        />
-
-
 
                         {/* Decorative corner kamon dot */}
                         <div
                             aria-hidden="true"
-                            className="absolute -bottom-2 -right-2 h-16 w-16 rounded-full border-4 border-white bg-rose-500/10"
+                            className="absolute -right-2 -bottom-2 h-16 w-16 rounded-full border-4 border-white bg-rose-500/10"
                         />
                     </div>
                 </div>

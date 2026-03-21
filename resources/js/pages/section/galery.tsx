@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type Category = 'semua' | 'pelatihan' | 'kelas' | 'kegiatan' | 'budaya';
+type Category = 'semua' | 'pelatihan' | 'kelas' | 'kegiatan' | 'budaya' | 'Keberangkatan';
 
 interface GalleryItem {
     id: string;
@@ -20,50 +20,58 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
     {
         id: 'g1',
-        src: 'https://placehold.co/1200x800/FFF1F2/BE123C?text=Pelatihan+Bahasa+Jepang',
-        thumb: 'https://placehold.co/600x400/FFF1F2/BE123C?text=Pelatihan+Bahasa',
-        title: 'Pelatihan Bahasa Jepang Intensif',
-        captionJp: '日本語集中訓練',
-        category: 'pelatihan',
+        src: '/resource/attachments/fotokbrgktan1.jpg',
+        thumb: '/resource/attachments/fotokbrgktan1.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
         aspect: 'landscape',
     },
     {
         id: 'g2',
-        src: 'https://placehold.co/800x1100/FFF1F2/E11D48?text=Kelas+N4',
-        thumb: 'https://placehold.co/400x550/FFF1F2/E11D48?text=Kelas+N4',
-        title: 'Kelas JLPT N4',
-        captionJp: 'N4クラス',
-        category: 'kelas',
+        src: '/resource/attachments/fotokbrgktan2.jpg',
+        thumb: '/resource/attachments/fotokbrgktan2.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
         aspect: 'portrait',
     },
     {
         id: 'g3',
-        src: 'https://placehold.co/900x900/FFF1F2/9F1239?text=Upacara+Budaya',
-        thumb: 'https://placehold.co/450x450/FFF1F2/9F1239?text=Upacara+Budaya',
-        title: 'Upacara Budaya Jepang',
-        captionJp: '日本文化式典',
-        category: 'budaya',
+        src: '/resource/attachments/fotokbrgktan3.jpg',
+        thumb: '/resource/attachments/fotokbrgktan3.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
         aspect: 'square',
     },
     {
         id: 'g4',
-        src: 'https://placehold.co/1200x750/FFF1F2/BE123C?text=Wisuda+Alumni',
-        thumb: 'https://placehold.co/600x375/FFF1F2/BE123C?text=Wisuda+Alumni',
-        title: 'Wisuda & Pelepasan Alumni',
-        captionJp: '卒業式',
-        category: 'kegiatan',
+        src: '/resource/attachments/fotokbrgktan4.jpg',
+        thumb: '/resource/attachments/fotokbrgktan4.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
         aspect: 'landscape',
     },
     {
         id: 'g5',
-        src: 'https://placehold.co/800x1050/FFF1F2/E11D48?text=Latihan+Budaya',
-        thumb: 'https://placehold.co/400x525/FFF1F2/E11D48?text=Latihan+Budaya',
-        title: 'Latihan Kebudayaan Jepang',
-        captionJp: '文化練習',
-        category: 'budaya',
+        src: '/resource/attachments/fotokbrgktan5.jpg',
+        thumb: '/resource/attachments/fotokbrgktan5.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
         aspect: 'portrait',
     },
-
+    {
+        id: 'g6',
+        src: '/resource/attachments/fotokbrgktan6.jpg',
+        thumb: '/resource/attachments/fotokbrgktan6.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
+        aspect: 'landscape',
+    },
 ];
 
 // ─── Category filter config ───────────────────────────────────────────────────

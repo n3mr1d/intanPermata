@@ -2,9 +2,26 @@ import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuilding, faImages, faStar, faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import { Menu, X, ArrowRight, ChevronRight, User, GalleryHorizontal, User2, GalleryVertical, Images } from 'lucide-react';
+import {
+    faBuilding,
+    faImages,
+    faStar,
+    faUser,
+    faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+    Menu,
+    X,
+    ArrowRight,
+    ChevronRight,
+    User,
+    GalleryHorizontal,
+    User2,
+    GalleryVertical,
+    Images,
+} from 'lucide-react';
 import JapanLine from '@/components/ui/japanline';
+import Logo from './icon';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface NavLink {
@@ -16,10 +33,30 @@ interface NavLink {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const navLinks: NavLink[] = [
-    { href: '#tentang', label: 'Tentang', labelJp: '私たちについて', icon: <FontAwesomeIcon icon={faUser} /> },
-    { href: '#galeri', label: 'Galeri', labelJp: 'ギャラリー', icon: <FontAwesomeIcon icon={faImages} /> },
-    { href: '#testimoni', label: 'Testimoni', labelJp: 'お客様の声 ', icon: <FontAwesomeIcon icon={faStar} /> },
-    { href: '#fasilitas', label: 'Fasilitas', labelJp: '施設', icon: <FontAwesomeIcon icon={faBuilding} /> },
+    {
+        href: '#tentang',
+        label: 'Tentang',
+        labelJp: '私たちについて',
+        icon: <FontAwesomeIcon icon={faUser} />,
+    },
+    {
+        href: '#galeri',
+        label: 'Galeri',
+        labelJp: 'ギャラリー',
+        icon: <FontAwesomeIcon icon={faImages} />,
+    },
+    {
+        href: '#testimoni',
+        label: 'Testimoni',
+        labelJp: 'お客様の声 ',
+        icon: <FontAwesomeIcon icon={faStar} />,
+    },
+    {
+        href: '#fasilitas',
+        label: 'Fasilitas',
+        labelJp: '施設',
+        icon: <FontAwesomeIcon icon={faBuilding} />,
+    },
 ];
 
 // ─── Sub Components ──────────────────────────────────────────────────────────
@@ -35,9 +72,7 @@ function NavLogo() {
                 {/* Outer decorative ring */}
                 <div className="absolute inset-0 rounded-full border border-rose-200 transition-all duration-500 group-hover:scale-110 group-hover:border-rose-400" />
                 {/* Inner circle */}
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-rose-400 to-rose-600 shadow-md transition-all duration-500 group-hover:shadow-rose-300/60 group-hover:shadow-lg">
-                    <span className="font-serif text-base font-bold text-white">日</span>
-                </div>
+                <Logo className="h-8 w-8" />
                 {/* Subtle sakura dot accent */}
                 <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full border border-white bg-rose-400" />
             </div>
@@ -45,13 +80,13 @@ function NavLogo() {
             {/* Brand text */}
             <div className="relative flex flex-col overflow-hidden rounded-lg px-2 py-0.5">
                 {/* JapanLine SVG as decorative background */}
-                <JapanLine className="pointer-events-none absolute -bottom-1 -right-2 h-10 w-auto opacity-20 transition-opacity duration-300 group-hover:opacity-40" />
+                <JapanLine className="pointer-events-none absolute -right-2 -bottom-1 h-10 w-auto opacity-20 transition-opacity duration-300 group-hover:opacity-40" />
 
-                <span className="relative text-[15px] font-bold leading-tight tracking-tight text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
+                <span className="relative text-[15px] leading-tight font-bold tracking-tight text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
                     LPK Puji Intan Shafira
                 </span>
                 <span className="relative text-[10px] font-light tracking-widest text-rose-400">
-                    日本・キャリア研修
+                    インドネシアの送り出し機関
                 </span>
             </div>
         </a>
@@ -63,12 +98,12 @@ function DesktopNavLink({ href, label, labelJp, icon }: NavLink) {
         <li>
             <a
                 href={href}
-                className="  group relative flex  items-center gap-0.5 px-5 py-1 text-sm font-medium text-neutral-600 transition-colors duration-200 hover:text-rose-600"
+                className="group relative flex items-center gap-0.5 px-5 py-1 text-sm font-medium text-neutral-600 transition-colors duration-200 hover:text-rose-600"
             >
                 {icon}
                 <span>{label}</span>
                 {/* Japanese label that fades in on hover */}
-                <span className="absolute text-center -bottom-4 text-[9px] tracking-widest text-rose-400 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <span className="absolute -bottom-4 text-center text-[9px] tracking-widest text-rose-400 opacity-0 transition-all duration-300 group-hover:opacity-100">
                     {labelJp}
                 </span>
                 {/* Animated underline */}
@@ -110,7 +145,11 @@ function KamonDivider() {
     return (
         <div className="flex items-center gap-2">
             <div className="h-px w-4 bg-rose-200" />
-            <svg viewBox="0 0 24 24" className="h-3 w-3 fill-rose-300" aria-hidden>
+            <svg
+                viewBox="0 0 24 24"
+                className="h-3 w-3 fill-rose-300"
+                aria-hidden
+            >
                 {/* Simplified sakura/kamon shape */}
                 <circle cx="12" cy="12" r="3" />
                 <circle cx="12" cy="5" r="1.5" />
@@ -215,12 +254,19 @@ export default function NavbarHome() {
                         <KamonDivider />
                         <Button
                             asChild
-                            className="group relative overflow-hidden rounded-full border border-rose-200 bg-white px-5 py-2 text-sm font-semibold text-rose-600 shadow-sm shadow-rose-100 transition-all duration-300 hover:border-rose-400 hover:bg-rose-50 hover:shadow-md hover:shadow-rose-200/60 hover:scale-[1.03]"
+                            className="group relative overflow-hidden rounded-full border border-rose-200 bg-white px-5 py-2 text-sm font-semibold text-rose-600 shadow-sm shadow-rose-100 transition-all duration-300 hover:scale-[1.03] hover:border-rose-400 hover:bg-rose-50 hover:shadow-md hover:shadow-rose-200/60"
                         >
-                            <a href="#daftar" className="flex items-center gap-2">
+                            <a
+                                href="https://wa.me/6289506399600?text=Halo%20Admin%20LPK%20Puji%20Intan%20Shafira%2C%20saya%20tertarik%20dan%20ingin%20mendaftar%20program%20pelatihan.%20Boleh%20minta%20informasi%20lebih%20lanjut%20mengenai%20persyaratan%20dan%20tata%20cara%20pendaftarannya%3F%20Terima%20kasih."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2"
+                            >
                                 {/* Animated background fill on hover */}
                                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-rose-50 to-rose-100 transition-transform duration-300 group-hover:translate-x-0" />
-                                <span className="relative">Daftar Sekarang</span>
+                                <span className="relative">
+                                    Daftar Sekarang
+                                </span>
                                 <FontAwesomeIcon icon={faUserPlus} />
                             </a>
                         </Button>
@@ -243,7 +289,9 @@ export default function NavbarHome() {
                         <span
                             className={cn(
                                 'absolute inset-0 flex items-center justify-center transition-all duration-300',
-                                mobileOpen ? 'rotate-90 opacity-100' : 'rotate-0 opacity-0',
+                                mobileOpen
+                                    ? 'rotate-90 opacity-100'
+                                    : 'rotate-0 opacity-0',
                             )}
                         >
                             <X className="h-5 w-5" />
@@ -251,7 +299,9 @@ export default function NavbarHome() {
                         <span
                             className={cn(
                                 'absolute inset-0 flex items-center justify-center transition-all duration-300',
-                                mobileOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100',
+                                mobileOpen
+                                    ? 'rotate-90 opacity-0'
+                                    : 'rotate-0 opacity-100',
                             )}
                         >
                             <Menu className="h-5 w-5" />
@@ -267,7 +317,9 @@ export default function NavbarHome() {
             <div
                 className={cn(
                     'fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-all duration-300 lg:hidden',
-                    mobileOpen ? 'opacity-100' : 'pointer-events-none opacity-0',
+                    mobileOpen
+                        ? 'opacity-100'
+                        : 'pointer-events-none opacity-0',
                 )}
                 onClick={closeMobileMenu}
                 aria-hidden="true"
@@ -286,11 +338,15 @@ export default function NavbarHome() {
                 <div className="flex items-center justify-between border-b border-rose-100 px-5 py-4">
                     <div className="flex items-center gap-2">
                         <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-rose-400 to-rose-600">
-                            <span className="font-serif text-xs font-bold text-white">日</span>
+                            <Logo className="h-8 w-8" />
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-neutral-800">LPK Puji Intan Shafira</p>
-                            <p className="text-[9px] tracking-widest text-rose-400">日本・キャリア研修</p>
+                            <p className="text-sm font-bold text-neutral-800">
+                                LPK Puji Intan Shafira
+                            </p>
+                            <p className="text-[9px] tracking-widest text-rose-400">
+                                インドネシアの送り出し機関
+                            </p>
                         </div>
                     </div>
                     <Button
@@ -309,7 +365,7 @@ export default function NavbarHome() {
 
                 {/* Nav links */}
                 <nav className="flex-1 overflow-y-auto px-3 py-4">
-                    <p className="mb-2 px-4 text-[9px] font-semibold uppercase tracking-[0.2em] text-rose-300">
+                    <p className="mb-2 px-4 text-[9px] font-semibold tracking-[0.2em] text-rose-300 uppercase">
                         ナビゲーション · Menu
                     </p>
                     <ul className="flex flex-col gap-1">
@@ -326,7 +382,9 @@ export default function NavbarHome() {
                 {/* Drawer footer CTA */}
                 <div className="border-t border-rose-100 p-4">
                     <a
-                        href="#daftar"
+                        href="https://wa.me/6289506399600?text=Halo%20Admin%20LPK%20Puji%20Intan%20Shafira%2C%20saya%20tertarik%20dan%20ingin%20mendaftar%20program%20pelatihan.%20Boleh%20minta%20informasi%20lebih%20lanjut%20mengenai%20persyaratan%20dan%20tata%20cara%20pendaftarannya%3F%20Terima%20kasih."
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={closeMobileMenu}
                         className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-rose-300/40 transition-all duration-300 hover:from-rose-600 hover:to-rose-700 hover:shadow-lg active:scale-95"
                     >

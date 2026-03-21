@@ -16,6 +16,7 @@ import {
     faYoutube,
     faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
+import Logo from './icon';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -52,31 +53,20 @@ const programLinks: FooterLink[] = [
 const socialLinks: SocialLink[] = [
     {
         icon: <FontAwesomeIcon icon={faInstagram} />,
-        href: '#',
+        href: 'https://www.instagram.com/lpk_intan_puji_shafira',
         label: 'Instagram',
         hoverColor: 'hover:bg-gradient-to-br hover:from-purple-500 hover:via-pink-500 hover:to-orange-400',
     },
     {
         icon: <FontAwesomeIcon icon={faFacebookF} />,
-        href: '#',
+        href: 'https://facebook.com/lpk.puji.intan.shafira',
         label: 'Facebook',
         hoverColor: 'hover:bg-blue-600',
     },
-    {
-        icon: <FontAwesomeIcon icon={faTiktok} />,
-        href: '#',
-        label: 'TikTok',
-        hoverColor: 'hover:bg-neutral-900',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faYoutube} />,
-        href: '#',
-        label: 'YouTube',
-        hoverColor: 'hover:bg-red-600',
-    },
+
     {
         icon: <FontAwesomeIcon icon={faWhatsapp} />,
-        href: '#',
+        href: 'https://wa.me/6289506399600',
         label: 'WhatsApp',
         hoverColor: 'hover:bg-emerald-500',
     },
@@ -163,9 +153,7 @@ function FooterLogo() {
             {/* Kanji badge */}
             <div className="relative flex h-12 w-12 items-center justify-center">
                 <div className="absolute inset-0 rounded-full border border-rose-400/30 transition-all duration-500 group-hover:scale-110 group-hover:border-rose-400" />
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-rose-400 to-rose-600 shadow-md transition-all duration-500 group-hover:shadow-rose-400/40 group-hover:shadow-lg">
-                    <span className="font-serif text-lg font-bold text-white">日</span>
-                </div>
+                <Logo className="h-10 w-10" />
                 <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full border border-white bg-rose-400" />
             </div>
 
@@ -175,7 +163,8 @@ function FooterLogo() {
                     LPK Puji Intan Shafira
                 </p>
                 <p className="text-[10px] font-light tracking-[0.25em] text-rose-400/80">
-                    日本・キャリア研修
+                    インドネシアの送り出し機関
+
                 </p>
             </div>
         </a>
@@ -282,7 +271,9 @@ export default function FooterHome() {
                         </div>
 
                         <a
-                            href="#daftar"
+                            href="https://wa.me/6289506399600?text=Halo%20Admin%20LPK%20Puji%20Intan%20Shafira%2C%20saya%20tertarik%20dan%20ingin%20mendaftar%20program%20pelatihan.%20Boleh%20minta%20informasi%20lebih%20lanjut%20mengenai%20persyaratan%20dan%20tata%20cara%20pendaftarannya%3F%20Terima%20kasih."
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group inline-flex items-center gap-2.5 rounded-full bg-rose-500 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-rose-300/40 transition-all duration-300 hover:scale-[1.03] hover:bg-rose-600 hover:shadow-rose-400/50"
                         >
                             Daftar Sekarang
@@ -395,14 +386,14 @@ export default function FooterHome() {
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faPhone} />}
                                 label="Telepon"
-                                value="x"
-                                href="tel:+6281234567890"
+                                value="0895-0639-9600"
+                                href="tel:+6289506399600"
                             />
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faEnvelope} />}
                                 label="Email"
-                                value="x"
-                                href="mailto:info@pujiintanshafira.com"
+                                value="lpk.pujishafira74@gmail.com"
+                                href="mailto:lpk.pujishafira74@gmail.com"
                             />
                             <ContactItem
                                 icon={<FontAwesomeIcon icon={faClock} />}
@@ -421,7 +412,7 @@ export default function FooterHome() {
                     <div className="flex items-center gap-3 text-center sm:text-left">
                         <SakuraPetal className="hidden h-4 w-4 text-rose-500/30 sm:block" />
                         <p className="text-xs text-neutral-400">
-                            © {currentYear} LPK Puji Intan Shafira. All rights reserved.
+                            © 2024 - {currentYear} LPK Puji Intan Shafira. All rights reserved.
                         </p>
                     </div>
 
