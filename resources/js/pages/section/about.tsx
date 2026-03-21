@@ -616,7 +616,7 @@ function LocationSection() {
 
                         {/* Phone */}
                         <a
-                            href="tel:+628123456789"
+                            href="tel:+6289506399600"
                             className="group flex gap-4 rounded-2xl border border-rose-50 bg-rose-50/60 p-5 transition-all duration-300 hover:border-rose-200 hover:bg-rose-50 hover:shadow-sm"
                         >
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 shadow-rose-100/60 ring-rose-100 transition-transform duration-300 group-hover:scale-110">
@@ -630,7 +630,7 @@ function LocationSection() {
                                     Telepon
                                 </p>
                                 <p className="text-sm font-semibold text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
-                                    +62 812-3456-7890
+                                    +62 8950-6399-600
                                 </p>
                                 <p className="text-xs text-neutral-400">
                                     Senin – Jumat: 08.00 – 17.00, Sabtu: 09.00 –
