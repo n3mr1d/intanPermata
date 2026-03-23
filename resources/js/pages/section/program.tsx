@@ -14,6 +14,10 @@ import {
     faClock,
     faGraduationCap,
     faChevronRight,
+    faBriefcase,
+    faStethoscope,
+    faUserTie,
+    faListCheck,
 } from '@fortawesome/free-solid-svg-icons';
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
@@ -27,6 +31,9 @@ interface Program {
     categoryJp: string;
     title: string;
     description: string;
+    requirements?: string[];
+    specialRequirements?: string[];
+    fields?: string[];
     duration: string;
     level: string;
     tags: ProgramTag[];
@@ -41,24 +48,62 @@ const programs: Program[] = [
         categoryJp: '語学研修',
         title: 'Bahasa Jepang Intensif',
         description:
-            'Kursus bahasa Jepang dari level N5 hingga N3 dengan metode komunikatif dan immersive. Dilengkapi lab bahasa modern dan native speaker tutor.',
+            'Pelatihan bahasa Jepang dari level N5 hingga N3 dengan metode komunikatif dan immersive. Dilengkapi lab bahasa modern dan native speaker tutor. ',
         duration: '6 – 12 Bulan',
         level: 'N5 → N3',
-        tags: [{ label: 'JLPT' }, { label: 'Komunikatif' }, { label: 'Native Speaker' }],
+        tags: [{ label: 'JFT' }, { label: 'SSW' }, { label: 'Native Speaker' }],
         accent: 'rose',
     },
-
     {
-        id: 'it',
-        icon: <FontAwesomeIcon icon={faLaptopCode} />,
-        categoryJp: 'IT・デジタル',
-        title: 'IT & Digital Support',
+        id: 'tokuteiginou',
+        icon: <FontAwesomeIcon icon={faUserTie} />,
+        categoryJp: '特定技能',
+        title: 'Program Tokuteiginou (SSW)',
         description:
-            'Program teknologi informasi untuk mendukung industri digital Jepang yang berkembang pesat. Mencakup IT Support, jaringan, dan layanan digital.',
-        duration: '8 – 10 Bulan',
-        level: 'IT Support',
-        tags: [{ label: 'IT Support' }, { label: 'Network' }, { label: 'Digital' }],
-        accent: 'rose',
+            'Program VISA kerja atau keahlian khusus untuk tenaga terampil. Dapat berpindah tempat kerja dan durasi kontrak hingga 5 tahun tanpa harus pulang.',
+        requirements: [
+            'Pria / Wanita, Usia 18 – 37 Tahun',
+            'Tinggi Min. 160cm (P) / 150cm (W)',
+            'Lulusan SMA/SMK/Sederajat',
+            'Sehat Jasmani (Bebas TBC) & Rohani',
+            'Mata Minus Maks -1.5, Tidak Buta Warna',
+            'Tidak Bertindik & Tidak Bertato'
+        ],
+        specialRequirements: [
+            'Sertifikat Bahasa JFT-Basic A2 / JLPT N4',
+            'Sertifikat Keahlian (SSW) di bidang minat',
+            'Eks-Magang: JITCO / Hyoukachousho'
+        ],
+        fields: ['Kaigo', 'Cleaning', 'Makanan', 'Restoran', 'Pertanian', 'Perikanan'],
+        duration: '3 – 5 Tahun',
+        level: 'Visa Kerja SSW',
+        tags: [{ label: 'Visa Kerja' }, { label: 'Gaji Tinggi' }, { label: 'Multi-Sektor' }],
+        accent: 'amber',
+    },
+    {
+        id: 'magang',
+        icon: <FontAwesomeIcon icon={faBriefcase} />,
+        categoryJp: '技能実習',
+        title: 'Program Magang Jepang',
+        description:
+            'Program kerja sama G-to-G untuk pelatihan keterampilan praktis di perusahaan Jepang. Memberikan pengalaman kerja internasional yang kompetitif.',
+        requirements: [
+            'Pria / Wanita, Usia 18 – 25 Tahun',
+            'Tinggi Min. 160cm (P) / 150cm (W)',
+            'Lulusan SMA/SMK/Sederajat',
+            'Sehat Jasmani & Rohani',
+            'Mata Minus Maks -1.5, Tidak Buta Warna',
+            'Tidak Bertindik & Tidak Bertato'
+        ],
+        specialRequirements: [
+            'Bahasa Jepang Dasar (Min. Bab 35)',
+            'Mampu berkomunikasi sehari-hari'
+        ],
+        fields: ['Kaigo', 'Manufaktur', 'Konstruksi', 'Makanan', 'Perhotelan', 'Pertanian'],
+        duration: '3 Tahun',
+        level: 'Trainee',
+        tags: [{ label: 'Ginou Jisshu' }, { label: 'Uang Saku' }, { label: 'Sertifikat' }],
+        accent: 'sky',
     },
 ];
 
@@ -296,6 +341,56 @@ function ProgramCard({ program }: { program: Program }) {
                 {program.description}
             </p>
 
+            {/* ── Requirements & Fields (Conditional) ── */}
+            {(program.requirements || program.fields) && (
+                <div className="relative mb-6 space-y-4">
+                    {program.requirements && (
+                        <div>
+                            <span className={cn(
+                                'mb-2 block text-[10px] font-bold uppercase tracking-wider',
+                                isFeatured ? 'text-rose-200' : 'text-neutral-900'
+                            )}>
+                                <FontAwesomeIcon icon={faListCheck} className="mr-1.5" />
+                                Persyaratan Umum
+                            </span>
+                            <ul className="grid grid-cols-1 gap-1.5">
+                                {program.requirements.slice(0, 4).map((req, i) => (
+                                    <li key={i} className={cn(
+                                        'flex items-center gap-2 text-[11px]',
+                                        isFeatured ? 'text-rose-100/80' : 'text-neutral-500'
+                                    )}>
+                                        <div className={cn('h-1 w-1 rounded-full', isFeatured ? 'bg-rose-300' : 'bg-rose-400')} />
+                                        {req}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    
+                    {program.fields && (
+                        <div>
+                            <span className={cn(
+                                'mb-2 block text-[10px] font-bold uppercase tracking-wider',
+                                isFeatured ? 'text-rose-200' : 'text-neutral-900'
+                            )}>
+                                <FontAwesomeIcon icon={faIndustry} className="mr-1.5" />
+                                Bidang Pekerjaan
+                            </span>
+                            <div className="flex flex-wrap gap-1.5">
+                                {program.fields.map((field, i) => (
+                                    <span key={i} className={cn(
+                                        'rounded-md px-2 py-0.5 text-[10px] font-medium',
+                                        isFeatured ? 'bg-white/10 text-rose-100' : 'bg-neutral-50 text-neutral-600'
+                                    )}>
+                                        {field}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            )}
+
             {/* ── Tags ── */}
             <div className="relative mb-6 flex flex-wrap gap-2">
                 {program.tags.map((tag) => (
@@ -316,7 +411,9 @@ function ProgramCard({ program }: { program: Program }) {
             {/* ── CTA ── */}
             <div className="relative mt-auto">
                 <a
-                    href="#daftar"
+                    href={`https://wa.me/6289506399600?text=Halo%20Admin%20LPK%20Puji%20Intan%20Shafira%2C%20saya%20ingin%20bertanya%20lebih%20lanjut%20mengenai%20${encodeURIComponent(program.title)}.%20Terima%20kasih.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(
                         'group/cta flex items-center gap-2 text-sm font-semibold transition-all duration-300',
                         isFeatured
@@ -325,7 +422,7 @@ function ProgramCard({ program }: { program: Program }) {
                     )}
                 >
                     <FontAwesomeIcon icon={faCircleCheck} className="h-4 w-4" />
-                    Daftar Program
+                    Tanya Program
                     <FontAwesomeIcon
                         icon={faChevronRight}
                         className="h-3 w-3 transition-transform duration-300 group-hover/cta:translate-x-1"
@@ -345,8 +442,8 @@ export default function ProgramSection() {
     const filterMap: Record<string, string[]> = {
         semua: programs.map((p) => p.id),
         bahasa: ['bahasa'],
-        teknik: ['manufaktur', 'konstruksi', 'it'],
-        lainnya: ['kuliner', 'pertanian'],
+        teknik: ['tokuteiginou', 'magang'],
+        lainnya: [],
     };
 
     const filters = [

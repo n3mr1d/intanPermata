@@ -395,9 +395,8 @@ export default function Certificate() {
     ];
 
     return (
-        <section className="relative overflow-hidden bg-[#faf9f6] py-24 dark:bg-zinc-950">
+        <section className="relative overflow-hidden bg-white/50">
             {/* Background Decorations */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rose-200 to-transparent dark:via-rose-900/50"></div>
 
             {/* Soft Washi Paper textured overlay for the entire section */}
             <div className="absolute inset-0 opacity-[0.4] mix-blend-multiply pointer-events-none dark:opacity-[0.02]"

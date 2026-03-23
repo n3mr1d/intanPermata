@@ -42,7 +42,12 @@ interface StatBadge {
 }
 const message = "Halo, saya ingin bertanya mengenai program pelatihan."
 // ─── Data ─────────────────────────────────────────────────────────────────────
-const missionItems: MissionItem[] = [{ text: 'x1' }, { text: 'x2' }];
+const missionItems: MissionItem[] = [{ text: 'Meningkatkan kualitas SDM untuk memperluas kesempatan kerja' },
+{ text: 'Menyediakan pelatihan bahasa Jepang yang berkualitas dan terstandar.' }, {
+    text: 'Meningkatkan kualitas kerja dengan pelatihan yang memadai'
+}, {
+    text: 'Pembentukan mental lebih mandiri untuk masuk dunia kerja yang mempunyai skill yang mampu bersaing'
+}];
 
 const socialLinks: SocialLink[] = [
     {
@@ -493,7 +498,7 @@ function VisionMissionSection() {
                         </div>
 
                         <p className="text-base leading-relaxed text-neutral-600">
-                            x
+                            Menjadi lembaga pelatihan bahasa Jepang dan penyaluran tenaga kerja yang unggul, terpercaya, serta mampu mencetak SDM Indonesia berdaya saing global.
                         </p>
 
                         {/* Corner decoration */}

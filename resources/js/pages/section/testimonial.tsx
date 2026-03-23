@@ -8,11 +8,12 @@ import {
     faChevronLeft,
     faChevronRight,
     faQuoteLeft,
+    faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type JourneyStep = 'training' | 'preparation' | 'departure' | 'success';
+type JourneyStep = 'pendaftaran' | 'bahasa' | 'diklat' | 'kesemaptaan' | 'test1' | 'test2' | 'keberangkatan';
 
 interface Testimonial {
     id: string;
@@ -29,25 +30,73 @@ interface Testimonial {
     isFeatured?: boolean;
 }
 
+interface VideoTestimonial {
+    id: string;
+    thumbnail: string;
+    videoUrl: string;
+    name: string;
+    role: string;
+    location: string;
+}
+
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const testimonials: Testimonial[] = [
     {
         id: 't1',
-        name: 'Ahmad Rizky',
-        role: 'Alumni · Operator Manufaktur',
-        location: 'Nagoya, Jepang 🇯🇵',
+        name: 'Leksi Fernando',
+        role: 'Alumni · Jalur Tokutei Ginou (TG)',
+        location: 'Jepang 🇯🇵',
         year: '2023',
         rating: 5,
-        text: 'Berkat LPK Puji Intan Shafira, saya sekarang bekerja di pabrik otomotif ternama di Nagoya. Pelatihannya sangat intensif dan pembimbing selalu siap membantu kapan saja. Mimpi saya bekerja di Jepang akhirnya terwujud!',
-        initials: 'AR',
-        avatarBg: 'from-rose-400 to-rose-600',
+        text: 'Terima kasih banyak Sei sudah memberangkatkan saya ke Jepang lewat jalur TG. Buat teman-teman yang mau cari LPK yang amanah di sini tempatnya 1000% amanah. Biayanya juga murah. Sekali lagi Ipai2 arigatou gozaimasu',
+        initials: 'LF',
+        avatarBg: 'from-blue-400 to-blue-600',
         avatarText: 'text-white',
-        journeyStep: 'success',
+        journeyStep: 'keberangkatan',
         isFeatured: true,
     },
     {
         id: 't2',
+        name: 'Atsumaru Cipta Indonesia',
+        role: 'Local Guide',
+        location: 'Indonesia 🇮🇩',
+        year: '2023',
+        rating: 5,
+        text: 'LPK yang ramah. Deskripsi pekerjaan jelas. Banyak loker. Gaji mantap. Masih mau intip-intip saja. Menunggu yang lain menyusul baru melamar. Pokoknya recommended banget.',
+        initials: 'AC',
+        avatarBg: 'from-amber-400 to-amber-600',
+        avatarText: 'text-white',
+        journeyStep: 'pendaftaran',
+    },
+    {
+        id: 't3',
+        name: 'Amir Batubara',
+        role: 'Alumni · Program Tokutei Ginou',
+        location: 'Jepang 🇯🇵',
+        year: '2023',
+        rating: 5,
+        text: 'Terima kasih kepada LPK Puji Intan Shafira, akhirnya saya mendapatkan pekerjaan di Jepang dengan program Takutei Ginou... LPK Puji Intan Shafira handal dan terpercaya...',
+        initials: 'AB',
+        avatarBg: 'from-sky-400 to-sky-600',
+        avatarText: 'text-white',
+        journeyStep: 'keberangkatan',
+    },
+    {
+        id: 't4',
+        name: 'MoM Mitha',
+        role: 'Alumni',
+        location: 'Indonesia 🇮🇩',
+        year: '2023',
+        rating: 5,
+        text: 'Insya Allah amanah karena sudah terbukti',
+        initials: 'MM',
+        avatarBg: 'from-emerald-400 to-emerald-600',
+        avatarText: 'text-white',
+        journeyStep: 'keberangkatan',
+    },
+    {
+        id: 't5',
         name: 'Siti Purnama',
         role: 'Alumni · Industri Kuliner',
         location: 'Osaka, Jepang 🇯🇵',
@@ -55,71 +104,41 @@ const testimonials: Testimonial[] = [
         rating: 5,
         text: 'Awalnya saya takut tidak bisa beradaptasi, tapi setelah mengikuti program di sini rasa percaya diri saya tumbuh pesat. Sekarang saya bekerja di bidang kuliner di Osaka dan sangat bahagia menjalani hidup baru.',
         initials: 'SP',
-        avatarBg: 'from-amber-400 to-amber-600',
+        avatarBg: 'from-rose-400 to-rose-600',
         avatarText: 'text-white',
-        journeyStep: 'success',
+        journeyStep: 'keberangkatan',
+    },
+];
+
+const videoTestimonials: VideoTestimonial[] = [
+    {
+        id: 'v1',
+        thumbnail: '/resource/attachments/videoTesti/tumb1.png',
+        videoUrl: '/resource/attachments/videoTesti/ROFI_N_ALDI.mp4',
+        name: 'Rofi N Aldi',
+        role: 'Alumni ',
+        location: 'Jepang',
     },
     {
-        id: 't3',
-        name: 'Budi Raharjo',
-        role: 'Alumni · IT Support',
-        location: 'Tokyo, Jepang 🇯🇵',
-        year: '2023',
-        rating: 5,
-        text: 'Program bahasa Jepang intensif di sini sangat efektif. Dalam 6 bulan saya berhasil lulus JLPT N4 dan langsung ditempatkan ke Tokyo. Kurikulumnya jauh di atas rata-rata LPK lain yang pernah saya lihat.',
-        initials: 'BR',
-        avatarBg: 'from-sky-400 to-sky-600',
-        avatarText: 'text-white',
-        journeyStep: 'success',
-    },
-    {
-        id: 't4',
-        name: 'Dewi Kartika',
-        role: 'Peserta · Angkatan 2024',
-        location: 'Masih dalam Pelatihan 🎌',
-        year: '2024',
-        rating: 5,
-        text: 'Saya sedang menjalani pelatihan dan sudah merasakan manfaatnya. Pengajar sangat profesional, materi terstruktur, dan fasilitas lengkap. Saya yakin akan siap ditempatkan ke Jepang dalam waktu dekat.',
-        initials: 'DK',
-        avatarBg: 'from-emerald-400 to-emerald-600',
-        avatarText: 'text-white',
-        journeyStep: 'training',
-    },
-    {
-        id: 't5',
-        name: 'Fajar Nugroho',
-        role: 'Alumni · Konstruksi',
-        location: 'Yokohama, Jepang 🇯🇵',
-        year: '2022',
-        rating: 5,
-        text: 'Proses keberangkatan sangat terorganisir, dari pengurusan visa hingga orientasi budaya. Tim LPK Puji Intan Shafira benar-benar mendampingi sampai saya tiba dan menyesuaikan diri di Jepang.',
-        initials: 'FN',
-        avatarBg: 'from-violet-400 to-violet-600',
-        avatarText: 'text-white',
-        journeyStep: 'departure',
-    },
-    {
-        id: 't6',
-        name: 'Rina Hastuti',
-        role: 'Alumni · Perawatan Lansia',
-        location: 'Kyoto, Jepang 🇯🇵',
-        year: '2023',
-        rating: 5,
-        text: 'Saya bersyukur memilih LPK Puji Intan Shafira. Pelatihan keperawatan lansia sangat komprehensif dan sesuai standar Jepang. Kini saya bekerja di fasilitas perawatan bergengsi di Kyoto dengan penghasilan yang sangat baik.',
-        initials: 'RH',
-        avatarBg: 'from-pink-400 to-pink-600',
-        avatarText: 'text-white',
-        journeyStep: 'success',
+        id: 'v2',
+        thumbnail: '/resource/attachments/videoTesti/tumb2.png',
+        videoUrl: '/resource/attachments/videoTesti/BISMA.mp4',
+        name: 'Bisma',
+        role: 'Alumni ·',
+        location: 'Jepang',
     },
 ];
 
 // ─── Journey Step Config ──────────────────────────────────────────────────────
 
 const journeyConfig: Record<JourneyStep, { label: string; labelJp: string; colorClass: string; step: number }> = {
-    training: { label: 'Pelatihan', labelJp: '訓練', colorClass: 'bg-sky-400', step: 1 },
-    preparation: { label: 'Persiapan', labelJp: '準備', colorClass: 'bg-amber-400', step: 2 },
-    departure: { label: 'Keberangkatan', labelJp: '出発', colorClass: 'bg-violet-400', step: 3 },
-    success: { label: 'Sukses di Jepang', labelJp: '成功', colorClass: 'bg-rose-500', step: 4 },
+    pendaftaran: { label: 'Pendaftaran', labelJp: '登録', colorClass: 'bg-emerald-400', step: 1 },
+    bahasa: { label: 'Belajar Bahasa', labelJp: '日本語', colorClass: 'bg-sky-400', step: 2 },
+    kesemaptaan: { label: 'Kesemaptaan', labelJp: '体力', colorClass: 'bg-amber-400', step: 3 },
+    test1: { label: 'Test 1', labelJp: '試験', colorClass: 'bg-orange-400', step: 4 },
+    test2: { label: 'Test 2', labelJp: '面接', colorClass: 'bg-rose-400', step: 5 },
+    diklat: { label: 'Pemantapan', labelJp: '訓練', colorClass: 'bg-violet-400', step: 6 },
+    keberangkatan: { label: 'Berangkat', labelJp: '出発', colorClass: 'bg-blue-500', step: 7 },
 };
 
 // ─── SVG Decorations ─────────────────────────────────────────────────────────
@@ -371,33 +390,33 @@ function TestimonialCard({ testimonial, isFeatured }: TestimonialCardProps) {
 // ─── Journey Timeline ─────────────────────────────────────────────────────────
 
 function JourneyTimeline() {
-    const steps: JourneyStep[] = ['training', 'preparation', 'departure', 'success'];
+    const steps: JourneyStep[] = ['pendaftaran', 'bahasa', 'kesemaptaan', 'test1', 'test2', 'diklat', 'keberangkatan'];
     return (
-        <div className="relative flex items-center justify-center gap-0" aria-label="Tahapan Perjalanan">
+        <div className="relative flex flex-wrap items-center justify-center gap-y-10 px-4 md:flex-nowrap md:gap-0" aria-label="Tahapan Perjalanan">
             {steps.map((step, idx) => {
                 const config = journeyConfig[step];
                 const isLast = idx === steps.length - 1;
                 return (
-                    <div key={step} className="flex items-center">
+                    <div key={step} className="flex flex-1 items-center">
                         {/* Step node */}
-                        <div className="flex flex-col items-center gap-1.5">
+                        <div className="flex flex-col items-center gap-1.5 transition-all duration-300">
                             <div
                                 className={cn(
-                                    'flex h-9 w-9 items-center justify-center rounded-full text-[10px] font-extrabold text-white shadow-md ring-2 ring-white transition-transform duration-300 hover:scale-110',
+                                    'flex h-10 w-10 items-center justify-center rounded-full text-[11px] font-extrabold text-white shadow-md ring-4 ring-white transition-all duration-300 hover:scale-125 hover:rotate-6',
                                     config.colorClass,
                                 )}
                             >
                                 {config.step}
                             </div>
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col items-center text-center">
                                 <span className="text-[8px] font-light tracking-[0.2em] text-rose-400">{config.labelJp}</span>
-                                <span className="text-[9px] font-semibold text-neutral-600">{config.label}</span>
+                                <span className="whitespace-nowrap text-[9px] font-bold text-neutral-600">{config.label}</span>
                             </div>
                         </div>
 
                         {/* Connector */}
                         {!isLast && (
-                            <div className="mx-2 mb-5 h-px w-10 bg-gradient-to-r from-rose-200 to-rose-300 sm:w-14" />
+                            <div className="hidden h-px flex-1 bg-gradient-to-r from-rose-200 to-rose-300 md:mx-2 md:block" />
                         )}
                     </div>
                 );
@@ -570,6 +589,77 @@ function TestimonialCarousel() {
     );
 }
 
+// ─── Video Testimonial Card ───────────────────────────────────────────────────
+
+function VideoTestimonialCard({ video }: { video: VideoTestimonial }) {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const handlePlay = () => {
+        setIsPlaying(true);
+    };
+
+    return (
+        <div
+            onClick={!isPlaying ? handlePlay : undefined}
+            className={cn(
+                "group relative overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-100/50",
+                !isPlaying && "cursor-pointer"
+            )}
+        >
+            {/* Thumbnail / Video Container */}
+            <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
+                {!isPlaying ? (
+                    <>
+                        <img
+                            src={video.thumbnail}
+                            alt={`Testimonial dari ${video.name}`}
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+
+                        {/* Overlay gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
+
+                        {/* Play button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-rose-500">
+                                <FontAwesomeIcon icon={faPlay} className="h-6 w-6 translate-x-0.5" />
+                            </div>
+                        </div>
+
+                        {/* Info badge top */}
+                        <div className="absolute left-4 top-4">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-black/30 px-3 py-1 text-[10px] font-bold text-white backdrop-blur-md">
+                                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500" />
+                                VIDEO REVIEWS
+                            </span>
+                        </div>
+
+                        {/* Content Overlay (Visible only when not playing) */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white pointer-events-none">
+                            <h4 className="text-lg font-bold leading-tight">{video.name}</h4>
+                            <p className="mt-1 text-xs font-medium text-rose-200">{video.role}</p>
+                            <div className="mt-3 flex items-center gap-2">
+                                <div className="h-px w-4 bg-rose-400" />
+                                <span className="text-[10px] font-bold tracking-widest text-white/80">{video.location}</span>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <video
+                        ref={videoRef}
+                        src={video.videoUrl}
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        controls
+                        onEnded={() => setIsPlaying(false)}
+                    />
+                )}
+            </div>
+        </div>
+    );
+}
+
 // ─── Main Testimonial Section ─────────────────────────────────────────────────
 
 export default function TestimonialSection() {
@@ -675,6 +765,35 @@ export default function TestimonialSection() {
                     {/* ── Testimonial Carousel ── */}
                     <TestimonialCarousel />
 
+                    {/* ── Video Testimonials Section ── */}
+                    <div className="mt-32">
+                        <div className="mb-12 text-center">
+                            <div className="mb-4 inline-flex items-center gap-2">
+                                <div className="h-px w-8 bg-gradient-to-r from-transparent to-rose-400" />
+                                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-rose-500">
+                                    ビデオレビュー
+                                </span>
+                                <div className="h-px w-8 bg-gradient-to-l from-transparent to-rose-400" />
+                            </div>
+                            <h3 className="text-3xl font-extrabold text-neutral-900 sm:text-4xl">
+                                Testimonial{' '}
+                                <span className="text-rose-500">Video</span>
+                            </h3>
+                            <p className="mt-4 text-sm text-neutral-500">
+                                Lihat langsung pengalaman mereka yang telah mencapai mimpi di Negeri Sakura
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:justify-center">
+                            {/* Empty space for centering on lg if wanted, or just more cards */}
+                            <div className="hidden lg:block" />
+                            {videoTestimonials.map((video) => (
+                                <VideoTestimonialCard key={video.id} video={video} />
+                            ))}
+                            <div className="hidden lg:block" />
+                        </div>
+                    </div>
+
                     {/* ── Bottom CTA ── */}
                     <div className="mt-20 flex flex-col items-center gap-6">
                         {/* Decorative divider */}
@@ -696,7 +815,7 @@ export default function TestimonialSection() {
                         </h3>
 
                         <p className="max-w-md text-center text-sm leading-relaxed text-neutral-500">
-                            Bergabunglah bersama 2.500+ alumni yang telah sukses berkarir di Jepang.
+                            Bergabunglah bersama alumni yang telah sukses berkarir di Jepang.
                             Jadilah bagian dari keluarga besar LPK Puji Intan Shafira.
                         </p>
 

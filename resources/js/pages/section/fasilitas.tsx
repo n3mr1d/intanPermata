@@ -38,20 +38,20 @@ const facilities: Facility[] = [
         titleJp: '教室',
         title: 'Ruang Kelas Modern',
         description:
-            'Ruang kelas ber-AC dengan proyektor interaktif & whiteboard digital. Dirancang untuk suasana belajar yang nyaman dan fokus sesuai standar pendidikan Jepang.',
-        image: 'https://placehold.co/800x500/FFF1F2/BE123C?text=Ruang+Kelas+Modern',
+            'Ruang kelas ber-AC dengan proyektor interaktif & whiteboard . Dirancang untuk suasana belajar yang nyaman dan fokus sesuai standar pendidikan Jepang.',
+        image: '/resource/attachments/kelasFas.jpg',
         tags: ['AC', 'Proyektor', 'Digital'],
     },
 
     {
-        id: 'simulasi',
+        id: 'Asrama',
         icon: <FontAwesomeIcon icon={faCogs} />,
-        titleJp: '実習室',
-        title: 'Ruang Simulasi Kerja',
+        titleJp: '寮',
+        title: 'Asrama',
         description:
-            'Ruang simulasi yang meniru lingkungan kerja nyata di Jepang. Siswa berlatih prosedur kerja, etika bisnis, dan keterampilan vokasional.',
-        image: 'https://placehold.co/800x500/FFF1F2/E11D48?text=Simulasi+Kerja',
-        tags: ['Vokasional', 'Etika', 'Praktik'],
+            'Asrama yang nyaman dan aman bagi siswa, dilengkapi dengan fasilitas lengkap untuk menunjang kegiatan belajar dan istirahat. Yang berlokasi di Sukun Pondok Indah L13 RT 08 RW 02, Kota Malang',
+        image: '/resource/attachments/asrama.jpg',
+        tags: ['Etika', 'Praktik'],
     },
 
 ];
@@ -139,12 +139,16 @@ function SeigaihaPattern({ className }: { className?: string }) {
 interface FacilityCardProps {
     facility: Facility;
     onOpen: () => void;
+    isFeatured?: boolean;
 }
 
-function FacilityCard({ facility, onOpen }: FacilityCardProps) {
+function FacilityCard({ facility, onOpen, isFeatured }: FacilityCardProps) {
     return (
         <article
-            className="group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-neutral-100 bg-white shadow-sm transition-all duration-500 hover:border-rose-200 hover:shadow-xl hover:shadow-rose-100/50"
+            className={cn(
+                "group relative flex cursor-pointer flex-col overflow-hidden rounded-[2.5rem] border border-neutral-100 bg-white shadow-sm transition-all duration-500 hover:border-rose-200 hover:shadow-2xl hover:shadow-rose-100/50",
+                isFeatured ? "md:flex-row md:items-stretch" : "flex-col"
+            )}
             style={{ animation: 'fadeInCard 0.45s ease both' }}
             tabIndex={0}
             role="button"
@@ -157,55 +161,80 @@ function FacilityCard({ facility, onOpen }: FacilityCardProps) {
             {/* Corner bloom */}
             <div className="absolute -bottom-8 -right-8 h-28 w-28 rounded-full bg-rose-50 transition-transform duration-500 group-hover:scale-[1.8]" />
 
-            {/* Image */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+            {/* Image section */}
+            <div className={cn(
+                "relative overflow-hidden bg-neutral-100",
+                isFeatured ? "aspect-square md:aspect-auto md:w-5/12" : "aspect-[16/10] w-full"
+            )}>
                 <img
                     src={facility.image}
                     alt={facility.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 "
                     loading="lazy"
                 />
 
-
                 {/* JP badge */}
-                <div className="absolute left-3 top-3 z-10 rounded-full border border-white/30 bg-white/85 px-2.5 py-1 text-[9px] font-bold tracking-[0.2em] text-rose-600 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:border-rose-200 group-hover:bg-white">
+                <div className="absolute left-4 top-4 z-10 rounded-full border border-white/30 bg-white/85 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-rose-600 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:border-rose-200 group-hover:bg-white">
                     {facility.titleJp}
                 </div>
             </div>
 
             {/* Card body */}
-            <div className="relative flex flex-1 flex-col px-5 py-4">
+            <div className={cn(
+                "relative flex flex-1 flex-col justify-center",
+                isFeatured ? "p-8 md:p-10" : "px-6 py-5"
+            )}>
                 {/* Icon + title */}
-                <div className="mb-2 flex items-center gap-3">
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-rose-50 text-sm text-rose-500 ring-1 ring-rose-100 transition-all duration-300 group-hover:bg-rose-100 group-hover:scale-110">
+                <div className="mb-4 flex items-center gap-4">
+                    <div className={cn(
+                        "flex flex-shrink-0 items-center justify-center rounded-2xl bg-rose-50 text-rose-500 ring-1 ring-rose-100 transition-all duration-300 group-hover:bg-rose-100 group-hover:scale-110",
+                        isFeatured ? "h-14 w-14 text-2xl" : "h-10 w-10 text-sm"
+                    )}>
                         {facility.icon}
                     </div>
-                    <h3 className="text-sm font-extrabold text-neutral-900 transition-colors duration-200 group-hover:text-rose-600">
-                        {facility.title}
-                    </h3>
+                    <div>
+                        <h3 className={cn(
+                            "font-extrabold text-neutral-900 transition-colors duration-200 group-hover:text-rose-600",
+                            isFeatured ? "text-xl md:text-2xl" : "text-base"
+                        )}>
+                            {facility.title}
+                        </h3>
+                        {isFeatured && (
+                            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-rose-400">Premium Facility</p>
+                        )}
+                    </div>
                 </div>
 
                 {/* Description */}
-                <p className="mb-3 line-clamp-2 text-[12px] leading-relaxed text-neutral-500">
+                <p className={cn(
+                    "mb-6 leading-relaxed text-neutral-500",
+                    isFeatured ? "text-base" : "line-clamp-2 text-[12px]"
+                )}>
                     {facility.description}
                 </p>
 
                 {/* Tags */}
-                <div className="mt-auto flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                     {facility.tags.map((tag) => (
                         <span
                             key={tag}
-                            className="rounded-full border border-rose-100 bg-rose-50 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest text-rose-500"
+                            className={cn(
+                                "rounded-full border border-rose-100 bg-rose-50 font-semibold uppercase tracking-widest text-rose-500",
+                                isFeatured ? "px-4 py-1.5 text-[11px]" : "px-2 py-0.5 text-[9px]"
+                            )}
                         >
                             {tag}
                         </span>
                     ))}
                 </div>
-            </div>
 
-            {/* Bottom accent petal */}
-            <div className="absolute bottom-3 right-3">
-                <SakuraPetal className="h-5 w-5 text-rose-200 transition-transform duration-300 group-hover:scale-125 group-hover:text-rose-400 group-hover:rotate-12" />
+                {/* Bottom accent petal */}
+                <div className="absolute bottom-6 right-6">
+                    <SakuraPetal className={cn(
+                        "text-rose-200 transition-transform duration-300  group-hover:rotate-12 group-hover:text-rose-400",
+                        isFeatured ? "h-10 w-10" : "h-5 w-5"
+                    )} />
+                </div>
             </div>
         </article>
     );
@@ -304,12 +333,18 @@ export default function FasilitasSection() {
                     </div>
 
                     {/* ── Facility Grid ── */}
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className={cn(
+                        "grid gap-10",
+                        facilities.length <= 2
+                            ? "mx-auto max-w-5xl grid-cols-1"
+                            : "sm:grid-cols-2 lg:grid-cols-4"
+                    )}>
                         {facilities.map((facility) => (
                             <FacilityCard
                                 key={facility.id}
                                 facility={facility}
                                 onOpen={() => setLightboxFacility(facility)}
+                                isFeatured={facilities.length <= 2}
                             />
                         ))}
                     </div>

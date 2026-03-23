@@ -29,12 +29,12 @@ const galleryItems: GalleryItem[] = [
     },
     {
         id: 'g2',
-        src: '/resource/attachments/fotokbrgktan2.jpg',
-        thumb: '/resource/attachments/fotokbrgktan2.jpg',
-        title: 'Foto Keberangkatan',
-        captionJp: 'しゅっぱつ',
-        category: 'Keberangkatan',
-        aspect: 'portrait',
+        src: '/resource/attachments/kelas_2.jpg',
+        thumb: '/resource/attachments/kelas_2.jpg',
+        title: 'Kelas',
+        captionJp: 'クラス',
+        category: 'kelas',
+        aspect: 'landscape',
     },
     {
         id: 'g3',
@@ -70,6 +70,50 @@ const galleryItems: GalleryItem[] = [
         title: 'Foto Keberangkatan',
         captionJp: 'しゅっぱつ',
         category: 'Keberangkatan',
+        aspect: 'landscape',
+    },
+    {
+        id: 'g7',
+        src: '/resource/attachments/senam_pagi.jpg',
+        thumb: '/resource/attachments/senam_pagi.jpg',
+        title: 'Kegiatan Senam Pagi',
+        captionJp: '朝の体操活動',
+        category: 'kegiatan',
+        aspect: 'portrait',
+    },
+    {
+        id: 'g8',
+        src: '/resource/attachments/fotokbrgktan2.jpg',
+        thumb: '/resource/attachments/fotokbrgktan2.jpg',
+        title: 'Foto Keberangkatan',
+        captionJp: 'しゅっぱつ',
+        category: 'Keberangkatan',
+        aspect: 'landscape',
+    }, {
+        id: 'g9',
+        src: '/resource/attachments/kelas.jpg',
+        thumb: '/resource/attachments/kelas.jpg',
+        title: 'Kelas',
+        captionJp: 'クラス',
+        category: 'kelas',
+        aspect: 'landscape',
+    },
+    {
+        id: 'g10',
+        src: '/resource/attachments/wawancara.jpg',
+        thumb: '/resource/attachments/wawancara.jpg',
+        title: 'Wawancara',
+        captionJp: '面接',
+        category: 'pelatihan',
+        aspect: 'landscape',
+    },
+    {
+        id: 'g11',
+        src: '/resource/attachments/wawancara1.jpg',
+        thumb: '/resource/attachments/wawancara1.jpg',
+        title: 'Wawancara',
+        captionJp: '面接',
+        category: 'pelatihan',
         aspect: 'landscape',
     },
 ];
@@ -405,9 +449,7 @@ export default function GallerySection() {
                             <SakuraPetal className="h-5 w-5 -scale-x-100 text-rose-400" />
                             <div className="h-px w-16 bg-gradient-to-l from-transparent to-rose-300" />
                         </div>
-                        <p className="text-xs text-neutral-400">
-                            Klik foto untuk melihat tampilan penuh
-                        </p>
+
                     </div>
                 </div>
 

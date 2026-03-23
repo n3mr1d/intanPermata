@@ -44,10 +44,8 @@ const quickLinks: FooterLink[] = [
 
 const programLinks: FooterLink[] = [
     { label: 'Bahasa Jepang Intensif', href: '#program' },
-    { label: 'Manufaktur & Industri', href: '#program' },
-    { label: 'Konstruksi', href: '#program' },
-    { label: 'IT & Digital Support', href: '#program' },
-    { label: 'Kuliner & Hospitality', href: '#program' },
+    { label: 'Program Tokuteiginou (SSW)', href: '#program' },
+    { label: 'Program Magang Jepang', href: '#program' },
 ];
 
 const socialLinks: SocialLink[] = [
@@ -266,7 +264,7 @@ export default function FooterHome() {
                                 </span>
                             </h3>
                             <p className="mt-1 max-w-md text-sm text-neutral-500">
-                                Bergabunglah bersama 2.500+ alumni yang telah berhasil berkarir di Jepang.
+                                Bergabunglah bersama alumni yang telah berhasil berkarir di Jepang.
                             </p>
                         </div>
 
