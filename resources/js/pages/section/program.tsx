@@ -67,17 +67,28 @@ const programs: Program[] = [
             'Lulusan SMA/SMK/Sederajat',
             'Sehat Jasmani (Bebas TBC) & Rohani',
             'Mata Minus Maks -1.5, Tidak Buta Warna',
-            'Tidak Bertindik & Tidak Bertato'
+            'Tidak Bertindik & Tidak Bertato',
         ],
         specialRequirements: [
             'Sertifikat Bahasa JFT-Basic A2 / JLPT N4',
             'Sertifikat Keahlian (SSW) di bidang minat',
-            'Eks-Magang: JITCO / Hyoukachousho'
+            'Eks-Magang: JITCO / Hyoukachousho',
         ],
-        fields: ['Kaigo', 'Cleaning', 'Makanan', 'Restoran', 'Pertanian', 'Perikanan'],
+        fields: [
+            'Kaigo',
+            'Building Cleaning',
+            'Pengolahan Makanan',
+            'Restoran',
+            'Pertanian',
+            'Perikanan',
+        ],
         duration: '3 – 5 Tahun',
         level: 'Visa Kerja SSW',
-        tags: [{ label: 'Visa Kerja' }, { label: 'Gaji Tinggi' }, { label: 'Multi-Sektor' }],
+        tags: [
+            { label: 'Visa Kerja' },
+            { label: 'Gaji Tinggi' },
+            { label: 'Multi-Sektor' },
+        ],
         accent: 'amber',
     },
     {
@@ -93,16 +104,27 @@ const programs: Program[] = [
             'Lulusan SMA/SMK/Sederajat',
             'Sehat Jasmani & Rohani',
             'Mata Minus Maks -1.5, Tidak Buta Warna',
-            'Tidak Bertindik & Tidak Bertato'
+            'Tidak Bertindik & Tidak Bertato',
         ],
         specialRequirements: [
             'Bahasa Jepang Dasar (Min. Bab 35)',
-            'Mampu berkomunikasi sehari-hari'
+            'Mampu berkomunikasi sehari-hari',
         ],
-        fields: ['Kaigo', 'Manufaktur', 'Konstruksi', 'Makanan', 'Perhotelan', 'Pertanian'],
+        fields: [
+            'Kaigo',
+            'Manufaktur',
+            'Konstruksi',
+            'Makanan',
+            'Perhotelan',
+            'Pertanian',
+        ],
         duration: '3 Tahun',
         level: 'Trainee',
-        tags: [{ label: 'Ginou Jisshu' }, { label: 'Uang Saku' }, { label: 'Sertifikat' }],
+        tags: [
+            { label: 'Ginou Jisshu' },
+            { label: 'Uang Saku' },
+            { label: 'Sertifikat' },
+        ],
         accent: 'sky',
     },
 ];
@@ -224,7 +246,12 @@ function AsanohaPattern({ className }: { className?: string }) {
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs>
-                <pattern id="asanoha-prog" patternUnits="userSpaceOnUse" width="40" height="40">
+                <pattern
+                    id="asanoha-prog"
+                    patternUnits="userSpaceOnUse"
+                    width="40"
+                    height="40"
+                >
                     <g fill="none" stroke="currentColor" strokeWidth="0.5">
                         <line x1="20" y1="0" x2="20" y2="40" />
                         <line x1="0" y1="20" x2="40" y2="20" />
@@ -258,7 +285,7 @@ function ProgramCard({ program }: { program: Program }) {
             {/* Top rose accent bar */}
             <div
                 className={cn(
-                    'absolute left-0 right-0 top-0 h-[3px]',
+                    'absolute top-0 right-0 left-0 h-[3px]',
                     isFeatured
                         ? 'bg-gradient-to-r from-rose-200/40 via-white/60 to-rose-200/40'
                         : 'bg-gradient-to-r from-transparent via-rose-400/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100',
@@ -267,12 +294,12 @@ function ProgramCard({ program }: { program: Program }) {
 
             {/* Featured: sakura watermark */}
             {isFeatured && (
-                <SakuraPetal className="absolute -bottom-4 -right-4 h-32 w-32 text-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" />
+                <SakuraPetal className="absolute -right-4 -bottom-4 h-32 w-32 text-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" />
             )}
 
             {/* Non-featured: subtle corner bloom */}
             {!isFeatured && (
-                <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-rose-50 transition-transform duration-500 group-hover:scale-150" />
+                <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-rose-50 transition-transform duration-500 group-hover:scale-150" />
             )}
 
             {/* ── Header ── */}
@@ -280,7 +307,7 @@ function ProgramCard({ program }: { program: Program }) {
                 {/* Icon */}
                 <div
                     className={cn(
-                        'flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl ring-1 text-lg transition-all duration-300 group-hover:scale-110',
+                        'flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl text-lg ring-1 transition-all duration-300 group-hover:scale-110',
                         accent.icon,
                         accent.iconHover,
                     )}
@@ -302,7 +329,7 @@ function ProgramCard({ program }: { program: Program }) {
             {/* ── Title ── */}
             <h3
                 className={cn(
-                    'relative mb-2 text-lg font-extrabold leading-snug',
+                    'relative mb-2 text-lg leading-snug font-extrabold',
                     isFeatured ? 'text-white' : 'text-neutral-900',
                 )}
             >
@@ -326,7 +353,10 @@ function ProgramCard({ program }: { program: Program }) {
                         isFeatured ? 'text-rose-200' : 'text-neutral-400',
                     )}
                 >
-                    <FontAwesomeIcon icon={faGraduationCap} className="h-3 w-3" />
+                    <FontAwesomeIcon
+                        icon={faGraduationCap}
+                        className="h-3 w-3"
+                    />
                     {program.level}
                 </span>
             </div>
@@ -346,42 +376,75 @@ function ProgramCard({ program }: { program: Program }) {
                 <div className="relative mb-6 space-y-4">
                     {program.requirements && (
                         <div>
-                            <span className={cn(
-                                'mb-2 block text-[10px] font-bold uppercase tracking-wider',
-                                isFeatured ? 'text-rose-200' : 'text-neutral-900'
-                            )}>
-                                <FontAwesomeIcon icon={faListCheck} className="mr-1.5" />
+                            <span
+                                className={cn(
+                                    'mb-2 block text-[10px] font-bold tracking-wider uppercase',
+                                    isFeatured
+                                        ? 'text-rose-200'
+                                        : 'text-neutral-900',
+                                )}
+                            >
+                                <FontAwesomeIcon
+                                    icon={faListCheck}
+                                    className="mr-1.5"
+                                />
                                 Persyaratan Umum
                             </span>
                             <ul className="grid grid-cols-1 gap-1.5">
-                                {program.requirements.slice(0, 4).map((req, i) => (
-                                    <li key={i} className={cn(
-                                        'flex items-center gap-2 text-[11px]',
-                                        isFeatured ? 'text-rose-100/80' : 'text-neutral-500'
-                                    )}>
-                                        <div className={cn('h-1 w-1 rounded-full', isFeatured ? 'bg-rose-300' : 'bg-rose-400')} />
-                                        {req}
-                                    </li>
-                                ))}
+                                {program.requirements
+                                    .slice(0, 4)
+                                    .map((req, i) => (
+                                        <li
+                                            key={i}
+                                            className={cn(
+                                                'flex items-center gap-2 text-[11px]',
+                                                isFeatured
+                                                    ? 'text-rose-100/80'
+                                                    : 'text-neutral-500',
+                                            )}
+                                        >
+                                            <div
+                                                className={cn(
+                                                    'h-1 w-1 rounded-full',
+                                                    isFeatured
+                                                        ? 'bg-rose-300'
+                                                        : 'bg-rose-400',
+                                                )}
+                                            />
+                                            {req}
+                                        </li>
+                                    ))}
                             </ul>
                         </div>
                     )}
-                    
+
                     {program.fields && (
                         <div>
-                            <span className={cn(
-                                'mb-2 block text-[10px] font-bold uppercase tracking-wider',
-                                isFeatured ? 'text-rose-200' : 'text-neutral-900'
-                            )}>
-                                <FontAwesomeIcon icon={faIndustry} className="mr-1.5" />
+                            <span
+                                className={cn(
+                                    'mb-2 block text-[10px] font-bold tracking-wider uppercase',
+                                    isFeatured
+                                        ? 'text-rose-200'
+                                        : 'text-neutral-900',
+                                )}
+                            >
+                                <FontAwesomeIcon
+                                    icon={faIndustry}
+                                    className="mr-1.5"
+                                />
                                 Bidang Pekerjaan
                             </span>
                             <div className="flex flex-wrap gap-1.5">
                                 {program.fields.map((field, i) => (
-                                    <span key={i} className={cn(
-                                        'rounded-md px-2 py-0.5 text-[10px] font-medium',
-                                        isFeatured ? 'bg-white/10 text-rose-100' : 'bg-neutral-50 text-neutral-600'
-                                    )}>
+                                    <span
+                                        key={i}
+                                        className={cn(
+                                            'rounded-md px-2 py-0.5 text-[10px] font-medium',
+                                            isFeatured
+                                                ? 'bg-white/10 text-rose-100'
+                                                : 'bg-neutral-50 text-neutral-600',
+                                        )}
+                                    >
                                         {field}
                                     </span>
                                 ))}
@@ -397,7 +460,7 @@ function ProgramCard({ program }: { program: Program }) {
                     <span
                         key={tag.label}
                         className={cn(
-                            'rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-wider',
+                            'rounded-full border px-3 py-1 text-[10px] font-semibold tracking-wider uppercase',
                             isFeatured
                                 ? 'border-white/20 bg-white/15 text-white'
                                 : cn(accent.tag),
@@ -435,9 +498,9 @@ function ProgramCard({ program }: { program: Program }) {
 
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export default function ProgramSection() {
-    const [activeFilter, setActiveFilter] = useState<'semua' | 'bahasa' | 'teknik' | 'lainnya'>(
-        'semua',
-    );
+    const [activeFilter, setActiveFilter] = useState<
+        'semua' | 'bahasa' | 'teknik' | 'lainnya'
+    >('semua');
 
     const filterMap: Record<string, string[]> = {
         semua: programs.map((p) => p.id),
@@ -459,46 +522,43 @@ export default function ProgramSection() {
     return (
         <section
             id="program"
-            className="relative overflow-hidden bg-white/50  py-28"
+            className="relative overflow-hidden bg-white/50 py-28"
         >
-
-
             {/* Asanoha pattern overlay */}
-            <AsanohaPattern className="absolute inset-0 h-full w-full text-white/[0.03] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)]" />
+            <AsanohaPattern className="absolute inset-0 h-full w-full [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)] text-white/[0.03]" />
 
             {/* Kanji watermarks */}
             <div
                 aria-hidden="true"
-                className="absolute right-10 top-12 select-none font-serif text-[12rem] font-bold leading-none text-white/[0.03]"
+                className="absolute top-12 right-10 font-serif text-[12rem] leading-none font-bold text-white/[0.03] select-none"
             >
                 研
             </div>
             <div
                 aria-hidden="true"
-                className="absolute left-8 bottom-16 select-none font-serif text-[9rem] font-bold leading-none text-white/[0.03]"
+                className="absolute bottom-16 left-8 font-serif text-[9rem] leading-none font-bold text-white/[0.03] select-none"
             >
                 修
             </div>
 
             {/* Floating sakura petals */}
-            <SakuraPetal className="absolute right-1/4 top-20 h-8 w-8 animate-[spin_15s_linear_infinite] text-rose-400/20" />
-            <SakuraPetal className="absolute left-1/3 bottom-24 h-6 w-6 animate-[spin_20s_linear_infinite_reverse] text-rose-300/15" />
+            <SakuraPetal className="absolute top-20 right-1/4 h-8 w-8 animate-[spin_15s_linear_infinite] text-rose-400/20" />
+            <SakuraPetal className="absolute bottom-24 left-1/3 h-6 w-6 animate-[spin_20s_linear_infinite_reverse] text-rose-300/15" />
 
             {/* ── Content ── */}
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
                 {/* ── Section Header ── */}
                 <div className="mb-12 text-center">
                     {/* JP label */}
                     <div className="mb-4 inline-flex items-center gap-2">
                         <div className="h-px w-8 bg-gradient-to-r from-transparent to-rose-500" />
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-rose-400">
+                        <span className="text-[10px] font-semibold tracking-[0.3em] text-rose-400 uppercase">
                             研修プログラム
                         </span>
                         <div className="h-px w-8 bg-gradient-to-l from-transparent to-rose-500" />
                     </div>
 
-                    <h2 className=" mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+                    <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
                         Program{' '}
                         <span className="relative inline-block">
                             <span className="relative z-10 bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent">
@@ -517,12 +577,11 @@ export default function ProgramSection() {
                     </div>
 
                     <p className="mx-auto max-w-2xl text-base leading-relaxed text-neutral-500">
-                        Pilih program yang sesuai dengan minat dan tujuan karir Anda di Jepang.
-                        Semua program dilengkapi sertifikat resmi dan pendampingan penempatan kerja.
+                        Pilih program yang sesuai dengan minat dan tujuan karir
+                        Anda di Jepang. Semua program dilengkapi sertifikat
+                        resmi dan pendampingan penempatan kerja.
                     </p>
                 </div>
-
-
 
                 {/* ── Program Cards Grid ── */}
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
