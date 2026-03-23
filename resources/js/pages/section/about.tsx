@@ -665,7 +665,7 @@ function LocationSection() {
 
                         {/* CTA Button */}
                         <a
-                            href="https://maps.google.com"
+                            href="https://maps.app.goo.gl/tZhsuT5rjwECBRyw6"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-rose-600 px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-rose-300/40 transition-all duration-300 hover:from-rose-600 hover:to-rose-700 hover:shadow-lg hover:shadow-rose-300/50 active:scale-95"
