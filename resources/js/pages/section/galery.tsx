@@ -254,7 +254,7 @@ function GalleryCard({ item, onOpen }: GalleryCardProps) {
             <div className={cn('relative w-full overflow-hidden', aspectClass)}>
                 <img
                     src={item.thumb}
-                    alt={item.title}
+                    alt={`${item.title} - Kegiatan LPK Puji Intan Shafira`}
                     className="h-full w-full object-cover transition-transform duration-700 "
                     loading="lazy"
                 />

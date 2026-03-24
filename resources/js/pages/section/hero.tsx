@@ -148,6 +148,7 @@ export default function HeroSection() {
 
                         {/* Headline */}
                         <h1 className="mb-6 text-4xl leading-tight font-extrabold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+                            <span className="text-xl sm:text-2xl font-semibold text-rose-400 block mb-2">LPK PUJI INTAN SHAFIRA</span>
                             Wujudkan{' '}
                             <span className="relative inline-block">
                                 <span className="relative z-10 text-rose-500">

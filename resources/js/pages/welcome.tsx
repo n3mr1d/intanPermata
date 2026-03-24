@@ -62,7 +62,9 @@ function FloatingScrollButton() {
 export default function Welcome() {
     return (
         <>
-            <Head title="Welcome">
+            <Head>
+                <title>LPK Puji Intan Shafira - Pusat Pelatihan Kerja & Magang ke Jepang</title>
+                <meta name="description" content="LPK Puji Intan Shafira mempersiapkan tenaga kerja Indonesia berkualitas untuk berkarir di Jepang melalui program pelatihan bahasa dan vokasional." />
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"

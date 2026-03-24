@@ -168,7 +168,7 @@ function FacilityCard({ facility, onOpen, isFeatured }: FacilityCardProps) {
             )}>
                 <img
                     src={facility.image}
-                    alt={facility.title}
+                    alt={`${facility.title} - Fasilitas LPK Puji Intan Shafira`}
                     className="h-full w-full object-cover transition-transform duration-700 "
                     loading="lazy"
                 />

@@ -301,7 +301,7 @@ function HeroAbout() {
                     私たちについて
                     <div className="h-px w-8 bg-gradient-to-l from-transparent to-rose-500" />
                 </div>
-                <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
+                <h2 className="mb-6 text-5xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
                     About{' '}
                     <span className="relative inline-block">
                         <span className="relative z-10 bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">
@@ -312,7 +312,7 @@ function HeroAbout() {
                             className="absolute -bottom-1 left-0 h-2 w-full -skew-x-2 bg-rose-100"
                         />
                     </span>
-                </h1>
+                </h2>
                 <p className="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-500">
                     LPK Puji Intan Shafira adalah lembaga pelatihan kerja
                     terdepan yang mempersiapkan putra-putri Indonesia untuk
@@ -646,7 +646,7 @@ function LocationSection() {
 
                         {/* Email */}
                         <a
-                            href="mailto:info@pujiintanshafira.id"
+                            href="mailto:lpk.pujishafira74@gmail.com"
                             className="group flex gap-4 rounded-2xl border border-rose-50 bg-rose-50/60 p-5 transition-all duration-300 hover:border-rose-200 hover:bg-rose-50 hover:shadow-sm"
                         >
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 shadow-rose-100/60 ring-rose-100 transition-transform duration-300 group-hover:scale-110">
@@ -660,7 +660,7 @@ function LocationSection() {
                                     Email
                                 </p>
                                 <p className="text-sm font-semibold text-neutral-800 transition-colors duration-200 group-hover:text-rose-600">
-                                    info@pujiintanshafira.id
+                                    lpk.pujishafira74@gmail.com
                                 </p>
                                 <p className="text-xs text-neutral-400">
                                     Respon dalam 1×24 jam
